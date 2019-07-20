@@ -1,11 +1,11 @@
-package com.chizganov.puzzlers;
+package com.chizganov.puzzlers.hackerrank.algorithms;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /*
-* The longest common subsequence (com.chizganov.puzzlers.LCS) problem is the problem of finding
+* The longest common subsequence (LCS) problem is the problem of finding
 * the longest subsequence common to all sequences in a set of sequences
 * (often just two sequences).
 * It differs from the longest common substring problem.
