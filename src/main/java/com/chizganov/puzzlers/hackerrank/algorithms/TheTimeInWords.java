@@ -1,10 +1,11 @@
 package com.chizganov.puzzlers.hackerrank.algorithms;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.Scanner;
-
-public class TheTimeInWords {
+/**
+ * <a href="https://www.hackerrank.com/challenges/the-time-in-words/problem">The Time In Words challenge</a>
+ *
+ * @author Ev Chizganov
+ * */
+class TheTimeInWords {
 
     private static final String[] d = new String[] {
         "zero",
@@ -30,7 +31,7 @@ public class TheTimeInWords {
         "twenty"
     };
 
-    private static String timeInWords(int h, int m) {
+    String timeInWords(int h, int m) {
         if(m == 0) return d[h] + " o' clock";
         if(m == 30) return "half past " + d[h];
         if(m == 15) return "quarter past " + d[h];
@@ -50,22 +51,6 @@ public class TheTimeInWords {
             if(m%10 != 0) min += " " + d[m%10];
         }
         return min + " minutes " + half + " " + d[h];
-    }
-
-    public static void main(String[] args) throws IOException {
-        final Scanner scanner = new Scanner(new File("input.txt"));
-
-        int h = scanner.nextInt();
-        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-
-        int m = scanner.nextInt();
-        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-
-        String result = timeInWords(h, m);
-
-        System.out.println(result);
-
-        scanner.close();
     }
 
 }
