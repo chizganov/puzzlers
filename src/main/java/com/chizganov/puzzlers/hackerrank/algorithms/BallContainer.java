@@ -1,19 +1,30 @@
 package com.chizganov.puzzlers.hackerrank.algorithms;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.Arrays;
-import java.util.Scanner;
 
 /**
- * https://www.hackerrank.com/challenges/organizing-containers-of-balls/problem
+ * <a href="https://www.hackerrank.com/challenges/organizing-containers-of-balls/problem">Organizing Containers of Balls challenge</a>
  *
  * @author Ev Chizganov
  * */
-public class BallContainer {
+class BallContainer {
 
-    // Complete the organizingContainers function below.
-    private static String organizingContainers(int[][] container) {
+    /**
+     * Perform some number of swap operations such that:
+     *  -Each container contains only balls of the same type.
+     *  -No two balls of the same type are located in different containers.
+     * Example:
+     *  input:
+     *      1 1
+     *      1 1
+     *  output:
+     *      2 0
+     *      0 2
+     *
+     * @param container matrix that represents container in rows and balls types in columns
+     * @return "Possible" if satisfy the conditions above, "Impossible" otherwise
+     * */
+    String organizingContainers(int[][] container) {
         /*
         * 1) Calculate tne capacity and ball of appropriate type
         * 2) Sort capacity and balls
@@ -36,36 +47,6 @@ public class BallContainer {
         if(Arrays.equals(capacity, ballCount)) return "Possible";
 
         return "Impossible";
-    }
-
-    public static void main(String[] args) throws FileNotFoundException {
-        final Scanner scanner = new Scanner(new FileInputStream("input.txt"));
-
-        int q = scanner.nextInt();
-        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-
-        for (int qItr = 0; qItr < q; qItr++) {
-            int n = scanner.nextInt();
-            scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-
-            int[][] container = new int[n][n];
-
-            for (int i = 0; i < n; i++) {
-                String[] containerRowItems = scanner.nextLine().split(" ");
-                scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-
-                for (int j = 0; j < n; j++) {
-                    int containerItem = Integer.parseInt(containerRowItems[j]);
-                    container[i][j] = containerItem;
-                }
-            }
-
-            String result = organizingContainers(container);
-
-            System.out.println(result);
-        }
-
-        scanner.close();
     }
 
 }
