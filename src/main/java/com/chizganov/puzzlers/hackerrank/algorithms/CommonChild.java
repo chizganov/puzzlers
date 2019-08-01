@@ -1,23 +1,20 @@
 package com.chizganov.puzzlers.hackerrank.algorithms;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 /*
 * The longest common subsequence (LCS) problem is the problem of finding
 * the longest subsequence common to all sequences in a set of sequences
 * (often just two sequences).
 * It differs from the longest common substring problem.
 *
-* https://www.hackerrank.com/challenges/common-child/problem?isFullScreen=false
+* <a href="https://www.hackerrank.com/challenges/common-child/problem">Common Child challenge</a>
 *
 * @author Ev Chizganov
 * */
-public class LCS {
+class CommonChild {
 
     // Recursion version
-    private static int recCommonChild(String s1, String s2) {
+    @SuppressWarnings({"unused", "WeakerAccess"})
+    int recCommonChild(String s1, String s2) {
         if(s1.length() == 0 || s2.length() == 0) {
             return 0;
         }
@@ -37,7 +34,7 @@ public class LCS {
     }
 
     // Non-recursion version - faster
-    private static int commonChild(String s1, String s2) {
+    int commonChild(String s1, String s2) {
         int[][] lcs = new int[s1.length()+1][s2.length()+1];
 
         for(int i = 0; i < s1.length(); i++) {
@@ -52,17 +49,6 @@ public class LCS {
         }
 
         return lcs[s1.length()][s2.length()];
-    }
-
-    public static void main(String[] args) throws FileNotFoundException {
-        final Scanner scanner = new Scanner(new FileInputStream("input.txt"));
-        String s1 = scanner.nextLine();
-        String s2 = scanner.nextLine();
-
-        int result = commonChild(s1, s2);
-        System.out.println(result);
-
-        scanner.close();
     }
 
 }
