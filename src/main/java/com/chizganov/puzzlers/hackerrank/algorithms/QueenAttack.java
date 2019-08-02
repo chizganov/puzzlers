@@ -1,21 +1,16 @@
 package com.chizganov.puzzlers.hackerrank.algorithms;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 /**
-* https://www.hackerrank.com/challenges/queens-attack-2/problem
+* <a href="https://www.hackerrank.com/challenges/queens-attack-2/problem>Queens Attack challenge</a>
 *
 * @author Ev Chizganov
 * */
-public class QueenAttack {
+class QueenAttack {
 
     private static final int Y = 0;
     private static final int X = 1;
 
-    // Complete the queensAttack function below.
-    private static int queensAttack(int n, int k, int r_q, int c_q, int[][] obstacles) {
+    int queensAttack(int n, int k, int r_q, int c_q, int[][] obstacles) {
         // closest obstacles to queen
         int[] closest = new int[8];
         for(int i = 0; i < 4; i++) {
@@ -60,40 +55,6 @@ public class QueenAttack {
         else if(dis == 6) return c_q - 1;
 
         return 0;
-    }
-
-    public static void main(String[] args) throws FileNotFoundException {
-        final Scanner scanner = new Scanner(new FileInputStream("input.txt"));
-
-        String[] nk = scanner.nextLine().split(" ");
-
-        int n = Integer.parseInt(nk[0]);
-
-        int k = Integer.parseInt(nk[1]);
-
-        String[] r_qC_q = scanner.nextLine().split(" ");
-
-        int r_q = Integer.parseInt(r_qC_q[0]);
-
-        int c_q = Integer.parseInt(r_qC_q[1]);
-
-        int[][] obstacles = new int[k][2];
-
-        for (int i = 0; i < k; i++) {
-            String[] obstaclesRowItems = scanner.nextLine().split(" ");
-            scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-
-            for (int j = 0; j < 2; j++) {
-                int obstaclesItem = Integer.parseInt(obstaclesRowItems[j]);
-                obstacles[i][j] = obstaclesItem;
-            }
-        }
-
-        int result = queensAttack(n, k, r_q, c_q, obstacles);
-
-        System.out.println(result);
-
-        scanner.close();
     }
 
 }
