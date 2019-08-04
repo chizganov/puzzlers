@@ -1,18 +1,13 @@
 package com.chizganov.puzzlers.hackerrank.algorithms;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 /**
- * https://www.hackerrank.com/challenges/acm-icpc-team/problem
+ * <a href="https://www.hackerrank.com/challenges/acm-icpc-team/problem">ACM ICPC Team challenge</a>
  *
  * @author Ev Chizganov
  */
-public class IcpcTeam {
+class IcpcTeam {
 
-    // Complete the acmTeam function below.
-    private static int[] acmTeam(String[] topic) {
+    int[] acmTeam(String[] topic) {
         int max = 0;
         int count = 0;
 
@@ -30,7 +25,7 @@ public class IcpcTeam {
         return new int[]{max, count};
     }
 
-    private static int countEqChar(char[] s1, char[] s2) {
+    private int countEqChar(char[] s1, char[] s2) {
         final int l = Math.min(s1.length, s2.length);
         int count = 0;
 
@@ -39,28 +34,6 @@ public class IcpcTeam {
         }
 
         return count;
-    }
-
-    public static void main(String[] args) throws FileNotFoundException {
-        final Scanner scanner = new Scanner(new FileInputStream("input.txt"));
-
-        String[] nm = scanner.nextLine().split(" ");
-
-        int n = Integer.parseInt(nm[0]);
-
-        int m = Integer.parseInt(nm[1]);
-
-        String[] topic = new String[n];
-
-        for (int i = 0; i < n; i++) {
-            String topicItem = scanner.nextLine();
-            topic[i] = topicItem;
-        }
-
-        int[] result = acmTeam(topic);
-        for(int r : result) System.out.println(r);
-
-        scanner.close();
     }
 
 }
