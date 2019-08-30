@@ -11,11 +11,11 @@ class CountingValleys {
         int level = 0;
         int valleys = 0;
         for(char c : s.toCharArray()) {
-            if(c == 'U') {
-                if(level == -1) valleys++;
-                level++;
+            if(c == 'U') level++;
+            else if(c == 'D') {
+                if(level == 0) valleys++;
+                level--;
             }
-            else if(c == 'D') level--;
         }
 
         return valleys;
