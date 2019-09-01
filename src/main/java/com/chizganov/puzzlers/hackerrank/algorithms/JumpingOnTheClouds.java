@@ -1,7 +1,7 @@
 package com.chizganov.puzzlers.hackerrank.algorithms;
 
 /**
- * <a href="https://www.hackerrank.com/challenges/jumping-on-the-clouds/problem>Jumping on the Clouds challenge</a>
+ * <a href="https://www.hackerrank.com/challenges/jumping-on-the-clouds/problem">Jumping on the Clouds challenge</a>
  *
  * @author Ev Chizganov
  * */

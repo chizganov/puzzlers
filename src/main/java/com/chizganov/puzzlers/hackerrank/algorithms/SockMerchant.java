@@ -1,7 +1,7 @@
 package com.chizganov.puzzlers.hackerrank.algorithms;
 
 /**
- * <a href="https://www.hackerrank.com/challenges/sock-merchant/problem>Sock Merchant challenge</a>
+ * <a href="https://www.hackerrank.com/challenges/sock-merchant/problem">Sock Merchant challenge</a>
  *
  * @author Ev Chizganov
  * */

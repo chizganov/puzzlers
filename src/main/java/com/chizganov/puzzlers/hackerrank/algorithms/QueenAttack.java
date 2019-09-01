@@ -1,7 +1,7 @@
 package com.chizganov.puzzlers.hackerrank.algorithms;
 
 /**
-* <a href="https://www.hackerrank.com/challenges/queens-attack-2/problem>Queens Attack challenge</a>
+* <a href="https://www.hackerrank.com/challenges/queens-attack-2/problem">Queens Attack challenge</a>
 *
 * @author Ev Chizganov
 * */

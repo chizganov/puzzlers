@@ -1,7 +1,7 @@
 package com.chizganov.puzzlers.hackerrank.algorithms;
 
 /**
- * <a href="https://www.hackerrank.com/challenges/counting-valleys/problem>Counting Valleys challenge</a>
+ * <a href="https://www.hackerrank.com/challenges/counting-valleys/problem">Counting Valleys challenge</a>
  *
  * @author Ev Chizganov
  * */

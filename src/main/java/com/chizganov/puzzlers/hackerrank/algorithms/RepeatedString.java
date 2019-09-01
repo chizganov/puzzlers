@@ -1,7 +1,7 @@
 package com.chizganov.puzzlers.hackerrank.algorithms;
 
 /**
- * <a href="https://www.hackerrank.com/challenges/repeated-string/problem>Repeated String challenge</a>
+ * <a href="https://www.hackerrank.com/challenges/repeated-string/problem">Repeated String challenge</a>
  *
  * @author Ev Chizganov
  * */
