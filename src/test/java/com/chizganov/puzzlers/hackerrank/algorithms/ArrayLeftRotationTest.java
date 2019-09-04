@@ -27,6 +27,7 @@ class ArrayLeftRotationTest {
         test("input10.txt", "output10.txt");
     }
 
+    @SuppressWarnings("Duplicates")
     void test(String inFile, String expFile) {
         InputStream inStream = getClass().getClassLoader().getResourceAsStream(PATH + "input/" + inFile);
         InputStream expStream = getClass().getClassLoader().getResourceAsStream(PATH + "output/" + expFile);
