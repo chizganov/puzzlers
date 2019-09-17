@@ -1,29 +1,45 @@
 package com.chizganov.puzzlers.hackerrank.algorithms;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.io.InputStream;
 import java.util.Scanner;
+import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RansomNoteTest {
 
     private static final String PATH = RansomNote.class.getName().replace('.', '/') + "/";
-    private static final RansomNote s = new RansomNote();
+    private static RansomNote s = new RansomNote();
 
-    @Test
-    void test00() {
+    static Stream<Arguments> provideImplementations() {
+        return Stream.of(
+                Arguments.of(new RansomNote()),
+                Arguments.of(new RansomNoteArray())
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("provideImplementations")
+    void test00(RansomNote impl) {
+        s = impl;
         test("input00.txt", "output00.txt");
     }
 
-    @Test
-    void test20() {
+    @ParameterizedTest
+    @MethodSource("provideImplementations")
+    void test20(RansomNote impl) {
+        s = impl;
         test("input20.txt", "output20.txt");
     }
 
-    @Test
-    void test21() {
+    @ParameterizedTest
+    @MethodSource("provideImplementations")
+    void test21(RansomNote impl) {
+        s = impl;
         test("input21.txt", "output21.txt");
     }
 

@@ -28,3 +28,17 @@ class RansomNote {
     }
 
 }
+
+class RansomNoteArray extends RansomNote {
+
+    @Override
+    boolean checkMagazine(String[] magazine, String[] note) {
+        Arrays.sort(magazine);
+        Arrays.sort(note);
+
+        List<String> mList = new ArrayList<>(Arrays.asList(magazine));
+        for (String n : note) if (!mList.remove(n)) return false;
+
+        return true;
+    }
+}
