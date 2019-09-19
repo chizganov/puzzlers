@@ -18,7 +18,7 @@ class RansomNoteTest {
     static Stream<Arguments> provideImplementations() {
         return Stream.of(
                 Arguments.of(new RansomNote()),
-                Arguments.of(new RansomNoteArray())
+                Arguments.of(new RansomNote.ListSolution())
         );
     }
 
