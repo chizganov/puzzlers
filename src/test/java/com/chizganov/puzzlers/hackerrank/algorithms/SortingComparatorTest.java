@@ -4,11 +4,10 @@ import org.junit.jupiter.api.Test;
 
 import java.io.InputStream;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Scanner;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static com.chizganov.puzzlers.hackerrank.algorithms.SortingComparator.Player;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class SortingComparatorTest {
 

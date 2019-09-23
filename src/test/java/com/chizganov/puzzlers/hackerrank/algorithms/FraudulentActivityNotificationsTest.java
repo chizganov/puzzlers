@@ -6,7 +6,7 @@ import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class FraudulentActivityNotificationsTest {
 
