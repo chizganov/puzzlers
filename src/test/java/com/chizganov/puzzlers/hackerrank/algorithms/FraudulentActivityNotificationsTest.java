@@ -19,6 +19,11 @@ class FraudulentActivityNotificationsTest {
     }
 
     @Test
+    void test01() {
+        test("input01.txt", "output01.txt");
+    }
+
+    @Test
     void test06() {
         test("input06.txt", "output06.txt");
     }
