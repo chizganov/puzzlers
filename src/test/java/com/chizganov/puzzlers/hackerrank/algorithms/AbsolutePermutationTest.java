@@ -1,42 +1,32 @@
 package com.chizganov.puzzlers.hackerrank.algorithms;
 
-import org.junit.jupiter.api.Test;
+import com.chizganov.puzzlers.util.TestSource;
+import org.junit.jupiter.params.ParameterizedTest;
 
+import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Path;
 import java.util.Scanner;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static java.nio.file.Files.newInputStream;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class AbsolutePermutationTest {
 
-    private static final String PATH = AbsolutePermutation.class.getName().replace('.', '/') + "/";
-    private final AbsolutePermutation ap = new AbsolutePermutation();
+    private final AbsolutePermutation s = new AbsolutePermutation();
 
-    @Test
-    void test00() {
-        test("input00.txt", "output00.txt");
-    }
+    @ParameterizedTest
+    @TestSource(AbsolutePermutation.class)
+    void absolutePermutation(Path input, Path output) throws IOException {
+        InputStream inStream = newInputStream(input);
+        InputStream expStream = newInputStream(output);
 
-    @Test
-    void test01() {
-        test("input01.txt", "output01.txt");
-    }
+        try (Scanner in = new Scanner(inStream);
+             Scanner exp = new Scanner(expStream)) {
 
-    @Test
-    void test12() {
-        test("input12.txt", "output12.txt");
-    }
-
-    void test(String inFile, String expFile) {
-        InputStream inStream = getClass().getClassLoader().getResourceAsStream(PATH + "input/" + inFile);
-        InputStream expStream = getClass().getClassLoader().getResourceAsStream(PATH + "output/" + expFile);
-        assert inStream != null;
-        assert expStream != null;
-
-        try(Scanner in = new Scanner(inStream);
-            Scanner exp = new Scanner(expStream)) {
             int t = in.nextInt();
             in.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+
             String expLine;
             StringBuilder strBuilder = new StringBuilder();
 
@@ -47,7 +37,7 @@ class AbsolutePermutationTest {
                 String[] nk = in.nextLine().split(" ");
                 int n = Integer.parseInt(nk[0]);
                 int k = Integer.parseInt(nk[1]);
-                int[] result = ap.absolutePermutation(n, k);
+                int[] result = s.absolutePermutation(n, k);
 
                 for (int i = 0; i < result.length; i++) {
                     strBuilder.append(result[i]);

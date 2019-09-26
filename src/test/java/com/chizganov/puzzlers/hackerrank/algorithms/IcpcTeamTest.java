@@ -1,39 +1,31 @@
 package com.chizganov.puzzlers.hackerrank.algorithms;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import com.chizganov.puzzlers.util.TestSource;
+import org.junit.jupiter.params.ParameterizedTest;
 
+import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Path;
 import java.util.Scanner;
+
+import static java.nio.file.Files.newInputStream;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class IcpcTeamTest {
 
-    private static final String PATH = IcpcTeam.class.getName().replace('.', '/') + "/";
-    private static final IcpcTeam c = new IcpcTeam();
+    private static final IcpcTeam s = new IcpcTeam();
 
-    @Test
-    void test00() {
-        test("input00.txt", "output00.txt");
-    }
+    @ParameterizedTest
+    @TestSource(IcpcTeam.class)
+    void acmTeam(Path input, Path output) throws IOException {
+        InputStream inStream = newInputStream(input);
+        InputStream expStream = newInputStream(output);
 
-    @Test void test08() {
-        test("input08.txt", "output08.txt");
-    }
-
-    void test(String inFile, String expFile) {
-        InputStream inStream = getClass().getClassLoader().getResourceAsStream(PATH + "input/" + inFile);
-        InputStream expStream = getClass().getClassLoader().getResourceAsStream(PATH + "output/" + expFile);
-        assert inStream != null;
-        assert expStream != null;
-
-        try(Scanner in = new Scanner(inStream);
-            Scanner exp = new Scanner(expStream)) {
+        try (Scanner in = new Scanner(inStream);
+             Scanner exp = new Scanner(expStream)) {
 
             String[] nm = in.nextLine().split(" ");
-
             int n = Integer.parseInt(nm[0]);
-
-            int m = Integer.parseInt(nm[1]);
 
             String[] topic = new String[n];
 
@@ -42,10 +34,10 @@ class IcpcTeamTest {
                 topic[i] = topicItem;
             }
 
-            int[] result = c.acmTeam(topic);
-            for(int r : result) {
+            int[] result = s.acmTeam(topic);
+            for (int r : result) {
                 int expResult = Integer.parseInt(exp.nextLine());
-                Assertions.assertEquals(expResult, r);
+                assertEquals(expResult, r);
             }
         }
     }

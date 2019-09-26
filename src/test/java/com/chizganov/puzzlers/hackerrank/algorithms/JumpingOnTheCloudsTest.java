@@ -1,35 +1,28 @@
 package com.chizganov.puzzlers.hackerrank.algorithms;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import com.chizganov.puzzlers.util.TestSource;
+import org.junit.jupiter.params.ParameterizedTest;
 
+import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Path;
 import java.util.Scanner;
+
+import static java.nio.file.Files.newInputStream;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class JumpingOnTheCloudsTest {
 
-    private static final String PATH = JumpingOnTheClouds.class.getName().replace('.', '/') + "/";
     private static final JumpingOnTheClouds s = new JumpingOnTheClouds();
 
-    @Test
-    void test00() {
-        test("input00.txt", "output00.txt");
-    }
+    @ParameterizedTest
+    @TestSource(JumpingOnTheClouds.class)
+    void jumpingOnClouds(Path input, Path output) throws IOException {
+        InputStream inStream = newInputStream(input);
+        InputStream expStream = newInputStream(output);
 
-    @Test
-    void test01() {
-        test("input01.txt", "output01.txt");
-    }
-
-    @SuppressWarnings({"Duplicates", "unused"})
-    void test(String inFile, String expFile) {
-        InputStream inStream = getClass().getClassLoader().getResourceAsStream(PATH + "input/" + inFile);
-        InputStream expStream = getClass().getClassLoader().getResourceAsStream(PATH + "output/" + expFile);
-        assert inStream != null;
-        assert expStream != null;
-
-        try(Scanner in = new Scanner(inStream);
-            Scanner exp = new Scanner(expStream)) {
+        try (Scanner in = new Scanner(inStream);
+             Scanner exp = new Scanner(expStream)) {
 
             int n = in.nextInt();
             in.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
@@ -46,7 +39,7 @@ class JumpingOnTheCloudsTest {
 
             int result = s.jumpingOnClouds(c);
             int expResult = Integer.parseInt(exp.nextLine());
-            Assertions.assertEquals(expResult, result);
+            assertEquals(expResult, result);
         }
     }
 
