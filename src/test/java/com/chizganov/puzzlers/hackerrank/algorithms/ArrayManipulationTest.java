@@ -32,7 +32,8 @@ class ArrayManipulationTest {
             in.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
             int[][] queries = new int[m][3];
-            while (m-- > 0) queries[m] = Arrays.stream(in.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+            for (int i = 0; i < m; i++)
+                queries[i] = Arrays.stream(in.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
 
             long actualResult = s.arrayManipulation(n, queries);
             long expectedResult = out.nextLong();
