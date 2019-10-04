@@ -11,11 +11,15 @@ class HeightOfABinaryTree {
         return root == null ? -1 : (height(root.left) > height(root.right) ? height(root.left) : height(root.right)) + 1;
     }
 
+    /*
+     * Given class from challenge
+     * */
+    @SuppressWarnings("Duplicates")
     static class Node {
 
-        int data;
-        Node left;
-        Node right;
+        private int data;
+        private Node left;
+        private Node right;
 
         Node(int data) {
             this.data = data;
