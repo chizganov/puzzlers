@@ -1,5 +1,10 @@
 package com.chizganov.puzzlers.hackerrank.algorithms;
 
+/**
+ * <a href="https://www.hackerrank.com/challenges/special-palindrome-again/problem">Special String Again challenge</a>
+ *
+ * @author Ev Chizganov
+ */
 class SpecialStringAgain {
 
     long substrCount(int n, String s) {
