@@ -12,20 +12,27 @@ import java.util.Map;
  */
 class FrequencyQueries {
 
-    List<Integer> freqQuery(List<List<Integer>> queries) {
-        Map<Integer, Integer> map = new HashMap<>();
+    List<Integer> freqQuery(List<int[]> queries) {
+        Map<Integer, Integer> valToOccurrences = new HashMap<>();
+        Map<Integer, Integer> occurrencesToValCount = new HashMap<>();
         List<Integer> frequencies = new ArrayList<>();
-        for (List<Integer> q : queries) {
-            int param = q.get(1);
-            switch (q.get(0)) {
+        for (int[] q : queries) {
+            int param = q[1];
+            switch (q[0]) {
                 case 1:
-                    map.merge(param, 1, (oldVal, newVal) -> ++oldVal);
+                    int occurrence = valToOccurrences.getOrDefault(param, 0);
+                    occurrencesToValCount.computeIfPresent(occurrence, (key, value) -> value == 1 ? null : value - 1);
+                    valToOccurrences.put(param, ++occurrence);
+                    occurrencesToValCount.merge(occurrence, 1, (oldVal, newVal) -> ++oldVal);
                     break;
                 case 2:
-                    map.computeIfPresent(param, (key, value) -> value == 1 ? null : value - 1);
+                    occurrence = valToOccurrences.getOrDefault(param, 0);
+                    occurrencesToValCount.computeIfPresent(occurrence, (key, value) -> value == 1 ? null : value - 1);
+                    valToOccurrences.computeIfPresent(param, (key, value) -> value == 1 ? null : value - 1);
+                    if (--occurrence >= 0) occurrencesToValCount.merge(occurrence, 1, (oldVal, newVal) -> ++oldVal);
                     break;
                 case 3:
-                    if (map.containsValue(param)) frequencies.add(1);
+                    if (occurrencesToValCount.containsKey(param)) frequencies.add(1);
                     else frequencies.add(0);
                     break;
             }

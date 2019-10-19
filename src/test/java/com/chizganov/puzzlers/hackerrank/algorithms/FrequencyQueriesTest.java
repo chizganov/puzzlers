@@ -7,10 +7,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -22,23 +20,13 @@ class FrequencyQueriesTest {
     @ParameterizedTest
     @TestSource(FrequencyQueries.class)
     void freqQuery(Path input, Path output) throws IOException {
-        try (BufferedReader in = Files.newBufferedReader(input) ;
+        try (BufferedReader in = Files.newBufferedReader(input);
              BufferedReader out = Files.newBufferedReader(output)) {
-            int q = Integer.parseInt(in.readLine().trim());
+            in.readLine();
 
-            List<List<Integer>> queries = new ArrayList<>();
-
-            IntStream.range(0, q).forEach(i -> {
-                try {
-                    queries.add(
-                            Stream.of(in.readLine().replaceAll("\\s+$", "").split(" "))
-                                    .map(Integer::parseInt)
-                                    .collect(toList())
-                    );
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
-            });
+            List<int[]> queries = in.lines()
+                    .map(line -> Arrays.stream(line.split(" ")).mapToInt(Integer::parseInt).toArray())
+                    .collect(toList());
 
             List<Integer> actualResult = s.freqQuery(queries);
             List<Integer> expectedResult = out.lines().mapToInt(Integer::parseInt).boxed().collect(toList());
