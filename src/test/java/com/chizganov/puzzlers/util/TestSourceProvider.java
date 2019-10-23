@@ -5,6 +5,8 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.ArgumentsProvider;
 import org.junit.jupiter.params.support.AnnotationConsumer;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -19,13 +21,13 @@ import static java.util.stream.Collectors.groupingBy;
  * {@code TestSourceProvider} is an {@code ArgumentsProvider} which uses {@link TestSource}
  * to provide test resources to a {@code @ParameterizedTest} method as a stream of {@code Arguments}.
  * <p>
- * Used as provider of input and expected output test files for testing puzzlers.
+ * Used as provider of class instance, input and expected output test files for testing puzzlers.
  * <p>
  * Example:
  * {@code
  *
  * @ParameterizedTest
- * @TestSource(TestedClass.class) void testSolution(Path input, Path output) {
+ * @TestSource(TestedClass.class) void testSolution(TestedClass instance, Path input, Path output) {
  * ...
  * }
  * }
@@ -36,7 +38,7 @@ import static java.util.stream.Collectors.groupingBy;
  */
 public class TestSourceProvider implements ArgumentsProvider, AnnotationConsumer<TestSource> {
 
-    private Class clazz;
+    private Class<?> clazz;
     private String testFilePattern;
 
     @Override public Stream<? extends Arguments> provideArguments(ExtensionContext extensionContext) throws Exception {
@@ -55,7 +57,18 @@ public class TestSourceProvider implements ArgumentsProvider, AnnotationConsumer
         }
 
         return testNumsToPaths.
-                values().stream().map(l -> Arguments.of(l.toArray()));
+                values().stream().map(l -> {
+            try {
+                Constructor constructor = clazz.getDeclaredConstructor();
+                constructor.setAccessible(true);
+                Object testedObj = constructor.newInstance();
+                return Arguments.of(testedObj, l.get(0), l.get(1));
+            } catch (NoSuchMethodException e) {
+                throw new IllegalArgumentException("Invalid testing class. Provide default constructor.", e);
+            } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 
     @Override public void accept(TestSource testSource) {
