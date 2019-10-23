@@ -16,11 +16,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CountTripletsTest {
 
-    private static CountTriplets s = new CountTriplets();
-
     @ParameterizedTest
     @TestSource(CountTriplets.class)
-    void countTriplets(Path input, Path output) throws IOException {
+    void countTriplets(CountTriplets solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream outStream = newInputStream(output);
 
@@ -35,7 +33,7 @@ class CountTripletsTest {
                     .boxed()
                     .collect(toList());
 
-            Long actualResult = s.countTriplets(arr, r);
+            Long actualResult = solution.countTriplets(arr, r);
             Long expectedResult = out.nextLong();
             assertEquals(expectedResult, actualResult);
         }

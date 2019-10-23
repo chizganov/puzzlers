@@ -14,11 +14,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MinimumSwapsTwoTest {
 
-    private static MinimumSwapsTwo s = new MinimumSwapsTwo();
-
     @ParameterizedTest
     @TestSource(MinimumSwapsTwo.class)
-    void minimumSwaps(Path input, Path output) throws IOException {
+    void minimumSwaps(MinimumSwapsTwo solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -30,7 +28,7 @@ class MinimumSwapsTwoTest {
 
             int[] arr = Arrays.stream(in.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
 
-            int actualResult = s.minimumSwaps(arr);
+            int actualResult = solution.minimumSwaps(arr);
             int expectedResult = exp.nextInt();
             assertEquals(expectedResult, actualResult);
         }

@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class AlternatingCharactersTest {
 
-    private static final AlternatingCharacters s = new AlternatingCharacters();
-
     @ParameterizedTest
     @TestSource(AlternatingCharacters.class)
-    void alternatingCharacters(Path input, Path output) throws IOException {
+    void alternatingCharacters(AlternatingCharacters solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -33,7 +31,7 @@ class AlternatingCharactersTest {
             for (int qItr = 0; qItr < q; qItr++) {
                 String l = in.nextLine();
 
-                result[qItr] = s.alternatingCharacters(l);
+                result[qItr] = solution.alternatingCharacters(l);
                 expResult[qItr] = Integer.parseInt(exp.nextLine());
             }
 

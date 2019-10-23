@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SpecialStringAgainTest {
 
-    private static SpecialStringAgain s = new SpecialStringAgain();
-
     @ParameterizedTest
     @TestSource(SpecialStringAgain.class)
-    void substrCount(Path input, Path output) throws IOException {
+    void substrCount(SpecialStringAgain solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream outStream = newInputStream(output);
 
@@ -26,7 +24,7 @@ class SpecialStringAgainTest {
             in.skip("\\d+(\r\n|[\n\r\u2028\u2029\u0085])?");
             String inputString = in.nextLine();
 
-            Long actualResult = s.substrCount(inputString.length(), inputString);
+            Long actualResult = solution.substrCount(inputString.length(), inputString);
             Long expectedResult = out.nextLong();
             assertEquals(expectedResult, actualResult);
         }

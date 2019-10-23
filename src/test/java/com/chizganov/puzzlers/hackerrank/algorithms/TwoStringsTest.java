@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TwoStringsTest {
 
-    private static final TwoStrings s = new TwoStrings();
-
     @ParameterizedTest
     @TestSource(TwoStrings.class)
-    void twoStrings(Path input, Path output) throws IOException {
+    void twoStrings(TwoStrings solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -31,7 +29,7 @@ class TwoStringsTest {
                 String s1 = in.nextLine();
                 String s2 = in.nextLine();
 
-                String result = s.twoStrings(s1, s2);
+                String result = solution.twoStrings(s1, s2);
                 String expResult = exp.nextLine();
                 assertEquals(expResult, result);
             }

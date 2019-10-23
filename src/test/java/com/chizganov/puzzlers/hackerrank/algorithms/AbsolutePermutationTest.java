@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class AbsolutePermutationTest {
 
-    private final AbsolutePermutation s = new AbsolutePermutation();
-
     @ParameterizedTest
     @TestSource(AbsolutePermutation.class)
-    void absolutePermutation(Path input, Path output) throws IOException {
+    void absolutePermutation(AbsolutePermutation solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -37,7 +35,7 @@ class AbsolutePermutationTest {
                 String[] nk = in.nextLine().split(" ");
                 int n = Integer.parseInt(nk[0]);
                 int k = Integer.parseInt(nk[1]);
-                int[] result = s.absolutePermutation(n, k);
+                int[] result = solution.absolutePermutation(n, k);
 
                 for (int i = 0; i < result.length; i++) {
                     strBuilder.append(result[i]);

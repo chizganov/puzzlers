@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MakingAnagramsTest {
 
-    private static final MakingAnagrams s = new MakingAnagrams();
-
     @ParameterizedTest
     @TestSource(MakingAnagrams.class)
-    void makeAnagram(Path input, Path output) throws IOException {
+    void makeAnagram(MakingAnagrams solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -27,7 +25,7 @@ class MakingAnagramsTest {
             String a = in.nextLine();
             String b = in.nextLine();
 
-            int result = s.makeAnagram(a, b);
+            int result = solution.makeAnagram(a, b);
             int expResult = Integer.parseInt(exp.nextLine());
             assertEquals(expResult, result);
         }

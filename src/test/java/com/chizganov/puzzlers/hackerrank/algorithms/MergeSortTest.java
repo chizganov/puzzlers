@@ -14,11 +14,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MergeSortTest {
 
-    private static MergeSort s = new MergeSort();
-
     @ParameterizedTest
-    @TestSource(value = MergeSort.class/*, pattern = "^[a-zA-Z]+01.txt$"*/)
-    void countInversions(Path input, Path output) throws IOException {
+    @TestSource(value = MergeSort.class)
+    void countInversions(MergeSort solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream outStream = newInputStream(output);
 
@@ -33,7 +31,7 @@ class MergeSortTest {
                 in.skip("\\d+(\r\n|[\n\r\u2028\u2029\u0085])?");
                 arr = Arrays.stream(in.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
 
-                long actualResult = s.countInversions(arr);
+                long actualResult = solution.countInversions(arr);
                 long expectedResult = out.nextLong();
                 assertEquals(expectedResult, actualResult);
             }

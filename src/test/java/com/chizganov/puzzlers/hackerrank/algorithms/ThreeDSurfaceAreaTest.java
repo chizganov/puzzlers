@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ThreeDSurfaceAreaTest {
 
-    private static final ThreeDSurfaceArea s = new ThreeDSurfaceArea();
-
     @ParameterizedTest
     @TestSource(ThreeDSurfaceArea.class)
-    void surfaceArea(Path input, Path output) throws IOException {
+    void surfaceArea(ThreeDSurfaceArea solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -41,7 +39,7 @@ class ThreeDSurfaceAreaTest {
                 }
             }
 
-            int result = s.surfaceArea(A);
+            int result = solution.surfaceArea(A);
             int expResult = Integer.parseInt(exp.nextLine());
             assertEquals(expResult, result);
         }

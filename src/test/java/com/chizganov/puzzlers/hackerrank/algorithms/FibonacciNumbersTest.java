@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class FibonacciNumbersTest {
 
-    private static FibonacciNumbers s = new FibonacciNumbers();
-
     @ParameterizedTest
     @TestSource(FibonacciNumbers.class)
-    void fibonacci(Path input, Path output) throws IOException {
+    void fibonacci(FibonacciNumbers solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream outStream = newInputStream(output);
 
@@ -26,7 +24,7 @@ class FibonacciNumbersTest {
 
             int n = in.nextInt();
 
-            int actualResult = s.fibonacci(n);
+            int actualResult = solution.fibonacci(n);
             int expectedResult = out.nextInt();
             assertEquals(expectedResult, actualResult);
         }

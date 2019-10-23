@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class NewYearChaosTest {
 
-    private static final NewYearChaos s = new NewYearChaos();
-
     @ParameterizedTest
     @TestSource(NewYearChaos.class)
-    void minimumBribes(Path input, Path output) throws IOException {
+    void minimumBribes(NewYearChaos solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -41,7 +39,7 @@ class NewYearChaosTest {
                     q[i] = qItem;
                 }
 
-                int r = s.minimumBribes(q);
+                int r = solution.minimumBribes(q);
                 String result = r == -1 ? "Too chaotic" : Integer.toString(r);
                 String expResult = exp.nextLine();
                 assertEquals(expResult, result);

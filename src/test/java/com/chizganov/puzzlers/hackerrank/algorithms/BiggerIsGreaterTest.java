@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class BiggerIsGreaterTest {
 
-    private static final BiggerIsGreater s = new BiggerIsGreater();
-
     @ParameterizedTest
     @TestSource(BiggerIsGreater.class)
-    void biggerIsGreater(Path input, Path output) throws IOException {
+    void biggerIsGreater(BiggerIsGreater solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -30,7 +28,7 @@ class BiggerIsGreaterTest {
             for (int TItr = 0; TItr < T; TItr++) {
                 String w = in.nextLine();
 
-                String result = s.biggerIsGreater(w);
+                String result = solution.biggerIsGreater(w);
                 String expResult = exp.nextLine();
                 assertEquals(expResult, result);
             }

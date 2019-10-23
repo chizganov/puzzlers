@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class LuckBalanceTest {
 
-    private static LuckBalance s = new LuckBalance();
-
     @ParameterizedTest
     @TestSource(LuckBalance.class)
-    void luckBalance(Path input, Path output) throws IOException {
+    void luckBalance(LuckBalance solution, Path input, Path output) throws IOException {
         try (BufferedReader in = newBufferedReader(input);
              BufferedReader out = newBufferedReader(output)) {
             int k = Integer.parseInt(in.readLine().split(" ")[1]);
@@ -26,7 +24,7 @@ class LuckBalanceTest {
                     .map(line -> Arrays.stream(line.split(" ")).mapToInt(Integer::parseInt).toArray())
                     .toArray(int[][]::new);
 
-            int actualResult = s.luckBalance(k, contests);
+            int actualResult = solution.luckBalance(k, contests);
             int expectedResult = Integer.parseInt(out.readLine());
             assertEquals(expectedResult, actualResult);
         }

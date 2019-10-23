@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CountingValleysTest {
 
-    private static final CountingValleys s = new CountingValleys();
-
     @ParameterizedTest
     @TestSource(CountingValleys.class)
-    void countingValleys(Path input, Path output) throws IOException {
+    void countingValleys(CountingValleys solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -29,7 +27,7 @@ class CountingValleysTest {
 
             String v = in.nextLine();
 
-            int result = s.countingValleys(v);
+            int result = solution.countingValleys(v);
             int expResult = Integer.parseInt(exp.nextLine());
             assertEquals(expResult, result);
         }

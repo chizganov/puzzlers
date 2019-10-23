@@ -14,23 +14,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RansomNoteTest {
 
-    private static RansomNote s;
-    private static Stream<RansomNote> impl = Stream.of(new RansomNote(), new RansomNote.ListSolution());
-
+    // TODO multiply solutions in @TestSource (provide RansomNote.ListSolution)
     @ParameterizedTest
     @TestSource(RansomNote.class)
-    void checkMagazine(Path input, Path output) {
-        impl.forEach(i -> {
-            s = i;
-            try {
-                test(input, output);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-    }
-
-    void test(Path input, Path output) throws IOException {
+    void checkMagazine(RansomNote solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -45,7 +32,7 @@ class RansomNoteTest {
             String[] note = in.nextLine().split(" ");
             in.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-            boolean result = s.checkMagazine(magazine, note);
+            boolean result = solution.checkMagazine(magazine, note);
             boolean expResult = exp.nextLine().equals("Yes");
             assertEquals(expResult, result);
         }

@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SockMerchantTest {
 
-    private static final SockMerchant s = new SockMerchant();
-
     @ParameterizedTest
     @TestSource(SockMerchant.class)
-    void sockMerchant(Path input, Path output) throws IOException {
+    void sockMerchant(SockMerchant solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -37,7 +35,7 @@ class SockMerchantTest {
                 ar[i] = arItem;
             }
 
-            int result = s.sockMerchant(ar);
+            int result = solution.sockMerchant(ar);
             int expResult = Integer.parseInt(exp.nextLine());
             assertEquals(expResult, result);
         }

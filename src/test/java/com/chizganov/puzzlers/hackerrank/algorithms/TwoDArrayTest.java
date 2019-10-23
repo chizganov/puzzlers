@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TwoDArrayTest {
 
-    private static final TwoDArray s = new TwoDArray();
-
     @ParameterizedTest
     @TestSource(TwoDArray.class)
-    void hourglassSum(Path input, Path output) throws IOException {
+    void hourglassSum(TwoDArray solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -36,7 +34,7 @@ class TwoDArrayTest {
                 }
             }
 
-            int result = s.hourglassSum(arr);
+            int result = solution.hourglassSum(arr);
             int expResult = Integer.parseInt(exp.nextLine());
             assertEquals(expResult, result);
         }

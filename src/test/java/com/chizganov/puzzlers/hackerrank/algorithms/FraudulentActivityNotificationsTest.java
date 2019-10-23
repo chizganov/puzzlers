@@ -14,11 +14,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class FraudulentActivityNotificationsTest {
 
-    private static final FraudulentActivityNotifications s = new FraudulentActivityNotifications();
-
     @ParameterizedTest
     @TestSource(FraudulentActivityNotifications.class)
-    void activityNotifications(Path input, Path output) throws IOException {
+    void activityNotifications(FraudulentActivityNotifications solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -30,7 +28,7 @@ class FraudulentActivityNotificationsTest {
 
             int[] expenditure = Arrays.stream(in.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
 
-            int result = s.activityNotifications(expenditure, d);
+            int result = solution.activityNotifications(expenditure, d);
             int expResult = Integer.parseInt(exp.nextLine());
             assertEquals(expResult, result);
         }

@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class BallContainerTest {
 
-    private final BallContainer s = new BallContainer();
-
     @ParameterizedTest
     @TestSource(BallContainer.class)
-    void organizingContainers(Path input, Path output) throws IOException {
+    void organizingContainers(BallContainer solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -43,7 +41,7 @@ class BallContainerTest {
                     }
                 }
 
-                String result = s.organizingContainers(container);
+                String result = solution.organizingContainers(container);
                 String expectedResult = exp.nextLine();
                 assertEquals(expectedResult, result);
             }

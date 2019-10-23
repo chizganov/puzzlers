@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SherlockAndTheValidStringTest {
 
-    private static final SherlockAndTheValidString s = new SherlockAndTheValidString();
-
     @ParameterizedTest
     @TestSource(SherlockAndTheValidString.class)
-    void isValid(Path input, Path output) throws IOException {
+    void isValid(SherlockAndTheValidString solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -26,7 +24,7 @@ class SherlockAndTheValidStringTest {
 
             String sin = in.nextLine();
 
-            String result = s.isValid(sin);
+            String result = solution.isValid(sin);
             String expResult = exp.nextLine();
             assertEquals(expResult, result);
         }

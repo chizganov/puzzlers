@@ -14,11 +14,9 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class ArrayLeftRotationTest {
 
-    private static final ArrayLeftRotation s = new ArrayLeftRotation();
-
     @ParameterizedTest
     @TestSource(ArrayLeftRotation.class)
-    void rotLeft(Path input, Path output) throws IOException {
+    void rotLeft(ArrayLeftRotation solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -38,7 +36,7 @@ class ArrayLeftRotationTest {
                 a[i] = aItem;
             }
 
-            int[] result = s.rotLeft(a, d);
+            int[] result = solution.rotLeft(a, d);
             int[] expResult = Arrays.stream(exp.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
             assertArrayEquals(expResult, result);
         }

@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class QueenAttackTest {
 
-    private static final QueenAttack s = new QueenAttack();
-
     @ParameterizedTest
     @TestSource(QueenAttack.class)
-    void queensAttack(Path input, Path output) throws IOException {
+    void queensAttack(QueenAttack solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -46,7 +44,7 @@ class QueenAttackTest {
                 }
             }
 
-            int result = s.queensAttack(n, k, r_q, c_q, obstacles);
+            int result = solution.queensAttack(n, k, r_q, c_q, obstacles);
             int expResult = Integer.parseInt(exp.nextLine());
             assertEquals(expResult, result);
         }

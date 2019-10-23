@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TheTimeInWordsTest {
 
-    private final TheTimeInWords s = new TheTimeInWords();
-
     @ParameterizedTest
     @TestSource(TheTimeInWords.class)
-    void timeInWords(Path input, Path output) throws IOException {
+    void timeInWords(TheTimeInWords solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -30,7 +28,7 @@ class TheTimeInWordsTest {
             int m = in.nextInt();
             in.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-            String result = s.timeInWords(h, m);
+            String result = solution.timeInWords(h, m);
             String expectedResult = exp.nextLine();
             assertEquals(expectedResult, result);
         }

@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TheGridSearchTest {
 
-    private static final TheGridSearch s = new TheGridSearch();
-
     @ParameterizedTest
     @TestSource(TheGridSearch.class)
-    void gridSearch(Path input, Path output) throws IOException {
+    void gridSearch(TheGridSearch solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -46,7 +44,7 @@ class TheGridSearchTest {
                     P[i] = PItem;
                 }
 
-                String result = s.gridSearch(G, P);
+                String result = solution.gridSearch(G, P);
                 String expResult = exp.nextLine();
                 assertEquals(expResult, result);
             }

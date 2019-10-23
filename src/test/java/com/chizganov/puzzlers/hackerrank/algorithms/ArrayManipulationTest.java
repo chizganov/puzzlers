@@ -14,11 +14,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ArrayManipulationTest {
 
-    private static ArrayManipulation s = new ArrayManipulation();
-
     @ParameterizedTest
     @TestSource(ArrayManipulation.class)
-    void arrayManipulation(Path input, Path output) throws IOException {
+    void arrayManipulation(ArrayManipulation solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream outStream = newInputStream(output);
 
@@ -35,7 +33,7 @@ class ArrayManipulationTest {
             for (int i = 0; i < m; i++)
                 queries[i] = Arrays.stream(in.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
 
-            long actualResult = s.arrayManipulation(n, queries);
+            long actualResult = solution.arrayManipulation(n, queries);
             long expectedResult = out.nextLong();
             assertEquals(expectedResult, actualResult);
         }

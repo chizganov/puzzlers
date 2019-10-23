@@ -14,15 +14,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class BubbleSortTest {
 
-    private static final BubbleSort s = new BubbleSort();
-
     private static final String SWAPS_COUNT = "Array is sorted in %d swaps.";
     private static final String FIRST_ELEMENT = "First Element: %d";
     private static final String LAST_ELEMENT = "Last Element: %d";
 
     @ParameterizedTest
     @TestSource(BubbleSort.class)
-    void countSwaps(Path input, Path output) throws IOException {
+    void countSwaps(BubbleSort solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -34,10 +32,10 @@ class BubbleSortTest {
 
             int[] a = Arrays.stream(in.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
 
-            s.countSwaps(a);
+            solution.countSwaps(a);
             String result = String.format(
                     String.join("\n", SWAPS_COUNT, FIRST_ELEMENT, LAST_ELEMENT),
-                    s.getNumSwaps(),
+                    solution.getNumSwaps(),
                     a[0],
                     a[a.length - 1]);
             String expResult = String.join("\n", exp.nextLine(), exp.nextLine(), exp.nextLine());

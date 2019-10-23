@@ -14,11 +14,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MarkAndToysTest {
 
-    private static final MarkAndToys s = new MarkAndToys();
-
     @ParameterizedTest
     @TestSource(MarkAndToys.class)
-    void maximumToys(Path input, Path output) throws IOException {
+    void maximumToys(MarkAndToys solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -30,7 +28,7 @@ class MarkAndToysTest {
             int k = Integer.parseInt(nk[1]);
             int[] prices = Arrays.stream(in.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
 
-            int result = s.maximumToys(prices, k);
+            int result = solution.maximumToys(prices, k);
             int expResult = Integer.parseInt(exp.nextLine());
             assertEquals(expResult, result);
         }

@@ -14,11 +14,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MinimumAbsoluteDifferenceInAnArrayTest {
 
-    private static MinimumAbsoluteDifferenceInAnArray s = new MinimumAbsoluteDifferenceInAnArray();
-
     @ParameterizedTest
     @TestSource(MinimumAbsoluteDifferenceInAnArray.class)
-    void minimumAbsoluteDifference(Path input, Path output) throws IOException {
+    void minimumAbsoluteDifference(MinimumAbsoluteDifferenceInAnArray solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream outStream = newInputStream(output);
 
@@ -27,7 +25,7 @@ class MinimumAbsoluteDifferenceInAnArrayTest {
             in.skip("\\d+(\r\n|[\n\r\u2028\u2029\u0085])?");
             int[] arr = Arrays.stream(in.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
 
-            int actualResult = s.minimumAbsoluteDifference(arr);
+            int actualResult = solution.minimumAbsoluteDifference(arr);
             int expectedResult = out.nextInt();
             assertEquals(expectedResult, actualResult);
         }

@@ -14,11 +14,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MaxArraySumTest {
 
-    private static MaxArraySum solution = new MaxArraySum();
-
     @ParameterizedTest
     @TestSource(MaxArraySum.class)
-    void maxSubsetSum(Path input, Path output) throws IOException {
+    void maxSubsetSum(MaxArraySum solution, Path input, Path output) throws IOException {
         try (BufferedReader in = newBufferedReader(input);
             BufferedReader out = newBufferedReader(output)) {
             in.readLine();

@@ -14,11 +14,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class HeightOfABinaryTreeTest {
 
-    private static final HeightOfABinaryTree s = new HeightOfABinaryTree();
-
     @ParameterizedTest
     @TestSource(HeightOfABinaryTree.class)
-    void height(Path input, Path output) throws IOException {
+    void height(HeightOfABinaryTree solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -33,7 +31,7 @@ class HeightOfABinaryTreeTest {
             HeightOfABinaryTree.Node root = new HeightOfABinaryTree.Node(data[0]);
             for (int i = 1; i < data.length; i++) HeightOfABinaryTree.Node.insert(root, data[i]);
 
-            int result = s.height(root);
+            int result = solution.height(root);
             int expResult = exp.nextInt();
             assertEquals(expResult, result);
         }

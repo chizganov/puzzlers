@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CommonChildTest {
 
-    private static final CommonChild s = new CommonChild();
-
     @ParameterizedTest
     @TestSource(CommonChild.class)
-    void commonChild(Path input, Path output) throws IOException {
+    void commonChild(CommonChild solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -27,7 +25,7 @@ class CommonChildTest {
             String s1 = in.nextLine();
             String s2 = in.nextLine();
 
-            int result = s.commonChild(s1, s2);
+            int result = solution.commonChild(s1, s2);
             int expectedResult = Integer.parseInt(exp.nextLine());
             assertEquals(expectedResult, result);
         }

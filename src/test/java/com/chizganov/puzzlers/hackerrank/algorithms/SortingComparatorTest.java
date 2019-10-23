@@ -15,11 +15,9 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class SortingComparatorTest {
 
-    private static final SortingComparator s = new SortingComparator();
-
     @ParameterizedTest
     @TestSource(SortingComparator.class)
-    void compare(Path input, Path output) throws IOException {
+    void compare(SortingComparator solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -36,7 +34,7 @@ class SortingComparatorTest {
                 expPlayers[i] = new Player(exp.next(), exp.nextInt());
             }
 
-            Arrays.sort(players, s);
+            Arrays.sort(players, solution);
             assertArrayEquals(expPlayers, players);
         }
     }

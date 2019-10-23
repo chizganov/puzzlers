@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class TheBombermanGameTest {
 
-    private static final TheBombermanGame s = new TheBombermanGame();
-
     @ParameterizedTest
     @TestSource(TheBombermanGame.class)
-    void bomberMan(Path input, Path output) throws IOException {
+    void bomberMan(TheBombermanGame solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -36,7 +34,7 @@ class TheBombermanGameTest {
                 grid[i] = gridItem;
             }
 
-            String[] result = s.bomberMan(n, grid);
+            String[] result = solution.bomberMan(n, grid);
             String[] expResult = new String[r];
             for (int i = 0; i < expResult.length; i++) {
                 expResult[i] = exp.nextLine();

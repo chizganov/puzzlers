@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SherlockAndAnagramsTest {
 
-    private static final SherlockAndAnagrams s = new SherlockAndAnagrams();
-
     @ParameterizedTest
     @TestSource(SherlockAndAnagrams.class)
-    void test(Path input, Path output) throws IOException {
+    void sherlockAndAnagrams(SherlockAndAnagrams solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -29,7 +27,7 @@ class SherlockAndAnagramsTest {
             for (int qItr = 0; qItr < q; qItr++) {
                 String l = in.nextLine();
 
-                int result = s.sherlockAndAnagrams(l);
+                int result = solution.sherlockAndAnagrams(l);
                 int expResult = Integer.parseInt(exp.nextLine());
                 assertEquals(expResult, result);
             }

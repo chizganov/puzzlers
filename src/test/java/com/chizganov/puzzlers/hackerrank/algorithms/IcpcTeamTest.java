@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class IcpcTeamTest {
 
-    private static final IcpcTeam s = new IcpcTeam();
-
     @ParameterizedTest
     @TestSource(IcpcTeam.class)
-    void acmTeam(Path input, Path output) throws IOException {
+    void acmTeam(IcpcTeam solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -34,7 +32,7 @@ class IcpcTeamTest {
                 topic[i] = topicItem;
             }
 
-            int[] result = s.acmTeam(topic);
+            int[] result = solution.acmTeam(topic);
             for (int r : result) {
                 int expResult = Integer.parseInt(exp.nextLine());
                 assertEquals(expResult, r);

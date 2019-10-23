@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RepeatedStringTest {
 
-    private static final RepeatedString rs = new RepeatedString();
-
     @ParameterizedTest
     @TestSource(RepeatedString.class)
-    void repeatedString(Path input, Path output) throws IOException {
+    void repeatedString(RepeatedString solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -29,7 +27,7 @@ class RepeatedStringTest {
             long n = in.nextLong();
             in.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
-            long result = rs.repeatedString(s, n);
+            long result = solution.repeatedString(s, n);
             long expResult = Long.parseLong(exp.nextLine());
             assertEquals(expResult, result);
         }

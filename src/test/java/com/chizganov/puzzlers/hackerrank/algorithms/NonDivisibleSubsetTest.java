@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class NonDivisibleSubsetTest {
 
-    private static final NonDivisibleSubset s = new NonDivisibleSubset();
-
     @ParameterizedTest
     @TestSource(NonDivisibleSubset.class)
-    void nonDivisibleSubset(Path input, Path output) throws IOException {
+    void nonDivisibleSubset(NonDivisibleSubset solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -39,7 +37,7 @@ class NonDivisibleSubsetTest {
                 S[i] = SItem;
             }
 
-            int result = s.nonDivisibleSubset(k, S);
+            int result = solution.nonDivisibleSubset(k, S);
             int expResult = Integer.parseInt(exp.nextLine());
             assertEquals(expResult, result);
         }

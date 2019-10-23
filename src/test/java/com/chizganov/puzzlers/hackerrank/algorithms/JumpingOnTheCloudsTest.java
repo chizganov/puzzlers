@@ -13,11 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class JumpingOnTheCloudsTest {
 
-    private static final JumpingOnTheClouds s = new JumpingOnTheClouds();
-
     @ParameterizedTest
     @TestSource(JumpingOnTheClouds.class)
-    void jumpingOnClouds(Path input, Path output) throws IOException {
+    void jumpingOnClouds(JumpingOnTheClouds solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
 
@@ -37,7 +35,7 @@ class JumpingOnTheCloudsTest {
                 c[i] = cItem;
             }
 
-            int result = s.jumpingOnClouds(c);
+            int result = solution.jumpingOnClouds(c);
             int expResult = Integer.parseInt(exp.nextLine());
             assertEquals(expResult, result);
         }

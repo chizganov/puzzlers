@@ -14,11 +14,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class LowestCommonAncestorTest {
 
-    private static LowestCommonAncestor s = new LowestCommonAncestor();
-
     @ParameterizedTest
     @TestSource(LowestCommonAncestor.class)
-    void lca(Path input, Path output) throws IOException {
+    void lca(LowestCommonAncestor solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream outStream = newInputStream(output);
 
@@ -34,7 +32,7 @@ class LowestCommonAncestorTest {
             int v1 = in.nextInt();
             int v2 = in.nextInt();
 
-            int actualResult = s.lca(root, v1, v2).getData();
+            int actualResult = solution.lca(root, v1, v2).getData();
             int expectedResult = out.nextInt();
             assertEquals(expectedResult, actualResult);
         }
