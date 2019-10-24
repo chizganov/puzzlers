@@ -19,9 +19,14 @@ import java.lang.annotation.Target;
 public @interface TestSource {
 
     /**
-     * Tested class, used in detection of resources used for testing.
+     * Tested class or interface, used in detection of resources used for testing.
      */
     Class<?> value();
+
+    /**
+     * Implementations to test.
+     */
+    Class<?>[] implementations() default {};
 
     /**
      * Test files regex pattern. Detects which files should be used as test method argument.
