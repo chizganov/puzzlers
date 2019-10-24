@@ -7,16 +7,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Path;
 import java.util.Scanner;
-import java.util.stream.Stream;
 
 import static java.nio.file.Files.newInputStream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RansomNoteTest {
 
-    // TODO multiply solutions in @TestSource (provide RansomNote.ListSolution)
     @ParameterizedTest
-    @TestSource(RansomNote.class)
+    @TestSource(value = RansomNote.class, implementations = {RansomNote.class, RansomNote.ListSolution.class})
     void checkMagazine(RansomNote solution, Path input, Path output) throws IOException {
         InputStream inStream = newInputStream(input);
         InputStream expStream = newInputStream(output);
