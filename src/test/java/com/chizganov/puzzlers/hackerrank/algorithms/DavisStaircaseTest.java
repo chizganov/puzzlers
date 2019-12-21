@@ -19,11 +19,8 @@ class DavisStaircaseTest {
              BufferedReader out = newBufferedReader(output)) {
             in.readLine();
 
-            int[] nums = in.lines().mapToInt(Integer::parseInt).toArray();
-
             int[] expectedResult = out.lines().mapToInt(Integer::parseInt).toArray();
-            int[] actualResult = new int[nums.length];
-            for (int i = 0; i < nums.length; i++) actualResult[i] = solution.stepPerms(nums[i]);
+            int[] actualResult = in.lines().mapToInt(Integer::parseInt).map(solution::stepPerms).toArray();
 
             assertArrayEquals(expectedResult, actualResult);
         }
