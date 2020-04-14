@@ -20,4 +20,16 @@ class SingleNumber {
         return numToCount.keySet().iterator().next();
     }
 
+    static class EffectiveSolution extends SingleNumber {
+
+        @Override int singleNumber(int[] nums) {
+            int result = 0;
+            for (int i : nums) {
+                result ^= i;
+            }
+
+            return result;
+        }
+    }
+
 }

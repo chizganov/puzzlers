@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class SingleNumberTest {
 
     @ParameterizedTest
-    @TestSource(SingleNumber.class)
+    @TestSource(value = SingleNumber.class, implementations = {SingleNumber.class, SingleNumber.EffectiveSolution.class})
     void singleNumber(SingleNumber solution, Path input, Path output) throws IOException {
         try (BufferedReader in = Files.newBufferedReader(input);
              BufferedReader out = Files.newBufferedReader(output)) {
