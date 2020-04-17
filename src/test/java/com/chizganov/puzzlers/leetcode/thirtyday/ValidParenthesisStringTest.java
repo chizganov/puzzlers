@@ -13,7 +13,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class ValidParenthesisStringTest {
 
     @ParameterizedTest
-    @TestSource(ValidParenthesisString.class)
+    @TestSource(value = ValidParenthesisString.class,
+            implementations = {ValidParenthesisString.class, ValidParenthesisString.GreedyEffectiveSolution.class})
     void checkValidString(ValidParenthesisString solution, Path input, Path output) throws IOException {
         try (BufferedReader in = Files.newBufferedReader(input);
              BufferedReader out = Files.newBufferedReader(output)) {
