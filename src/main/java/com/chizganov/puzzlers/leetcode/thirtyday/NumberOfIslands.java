@@ -74,4 +74,36 @@ class NumberOfIslands {
         }
     }
 
+    static class RecursiveSolution extends NumberOfIslands {
+
+        @Override int numIslands(char[][] grid) {
+            if (grid == null || grid.length == 0 || grid[0].length == 0) return 0;
+
+            int islandCount = 0;
+
+            for (int i = 0; i < grid.length; i++) {
+                for (int j = 0; j < grid[0].length; j++) {
+                    if (grid[i][j] == '1') {
+                        islandCount++;
+                        traverseIsland(grid, i, j);
+                    }
+                }
+            }
+
+            return islandCount;
+        }
+
+        private static void traverseIsland(char[][] grid, int y, int x) {
+            if (y < 0 || y >= grid.length || x < 0 || x >= grid[y].length || grid[y][x] != '1') return;
+
+            grid[y][x] = 'x';
+
+            traverseIsland(grid, y - 1, x);
+            traverseIsland(grid, y + 1, x);
+            traverseIsland(grid, y, x - 1);
+            traverseIsland(grid, y, x + 1);
+        }
+
+    }
+
 }

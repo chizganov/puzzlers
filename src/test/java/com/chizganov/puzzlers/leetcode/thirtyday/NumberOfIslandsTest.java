@@ -14,7 +14,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class NumberOfIslandsTest {
 
     @ParameterizedTest
-    @TestSource(NumberOfIslands.class)
+    @TestSource(value = NumberOfIslands.class,
+            implementations = {NumberOfIslands.class, NumberOfIslands.RecursiveSolution.class})
     void numIslands(NumberOfIslands solution, Path input, Path output) throws IOException {
         try (BufferedReader in = Files.newBufferedReader(input);
              BufferedReader out = Files.newBufferedReader(output)) {
