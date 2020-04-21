@@ -54,4 +54,22 @@ class LeftmostColumn {
         }
     }
 
+    static class OptimalSolution extends LeftmostColumn {
+
+        @Override public int leftMostColumnWithOne(BinaryMatrix binaryMatrix) {
+            int HEIGHT = binaryMatrix.dimensions().get(0);
+            int leftover = binaryMatrix.dimensions().get(1) - 1;
+            boolean isFound = false;
+
+            for (int i = 0; i < HEIGHT; i++) {
+                if (binaryMatrix.get(i, leftover) == 1) {
+                    isFound = true;
+                    while (leftover > 0 && binaryMatrix.get(i, leftover - 1) == 1) leftover--;
+                }
+            }
+
+            return isFound ? leftover : -1;
+        }
+    }
+
 }

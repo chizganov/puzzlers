@@ -15,7 +15,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class LeftmostColumnTest {
 
     @ParameterizedTest
-    @TestSource(LeftmostColumn.class)
+    @TestSource(value = LeftmostColumn.class,
+            implementations = {LeftmostColumn.class, LeftmostColumn.OptimalSolution.class})
     void leftMostColumnWithOne(LeftmostColumn solution, Path input, Path output) throws IOException {
         try (BufferedReader in = Files.newBufferedReader(input);
              BufferedReader out = Files.newBufferedReader(output)) {
