@@ -16,15 +16,20 @@ class HappyNumber {
         Set<Integer> visited = new TreeSet<>();
         while (n != 1 && !visited.contains(n)) {
             visited.add(n);
-            int t = 0;
-            while (n != 0) {
-                t += pow(n % 10, 2);
-                n /= 10;
-            }
-            n = t;
+            n = digitSquareSum(n);
         }
 
         return n == 1;
+    }
+
+    private static int digitSquareSum(int n) {
+        int sum = 0;
+        while (n != 0) {
+            sum += pow(n % 10, 2);
+            n /= 10;
+        }
+
+        return sum;
     }
 
 }
