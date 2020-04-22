@@ -1,5 +1,7 @@
 package com.chizganov.puzzlers.hackerrank.algorithms;
 
+import static java.lang.Integer.max;
+
 /**
  * <a href="https://www.hackerrank.com/challenges/tree-height-of-a-binary-tree/problem">Height of a binary tree challenge</a>
  *
@@ -8,7 +10,7 @@ package com.chizganov.puzzlers.hackerrank.algorithms;
 class HeightOfABinaryTree {
 
     int height(Node root) {
-        return root == null ? -1 : (height(root.left) > height(root.right) ? height(root.left) : height(root.right)) + 1;
+        return root == null ? -1 : (max(height(root.left), height(root.right))) + 1;
     }
 
     /*
@@ -17,7 +19,7 @@ class HeightOfABinaryTree {
     @SuppressWarnings("Duplicates")
     static class Node {
 
-        private int data;
+        private final int data;
         private Node left;
         private Node right;
 

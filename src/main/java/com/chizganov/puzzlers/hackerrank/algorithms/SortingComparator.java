@@ -20,8 +20,8 @@ class SortingComparator implements Comparator<SortingComparator.Player> {
 
     static class Player {
 
-        private String name;
-        private int score;
+        private final String name;
+        private final int score;
 
         Player(String name, int score) {
             Objects.requireNonNull(name);

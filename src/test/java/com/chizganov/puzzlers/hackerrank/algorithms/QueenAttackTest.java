@@ -44,7 +44,7 @@ class QueenAttackTest {
                 }
             }
 
-            int result = solution.queensAttack(n, k, r_q, c_q, obstacles);
+            int result = solution.queensAttack(n, r_q, c_q, obstacles);
             int expResult = Integer.parseInt(exp.nextLine());
             assertEquals(expResult, result);
         }

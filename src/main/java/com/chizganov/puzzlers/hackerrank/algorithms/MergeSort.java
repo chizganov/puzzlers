@@ -1,5 +1,6 @@
 package com.chizganov.puzzlers.hackerrank.algorithms;
 
+import static java.lang.Integer.max;
 import static java.lang.Math.min;
 import static java.lang.System.arraycopy;
 
@@ -28,10 +29,10 @@ class MergeSort {
 
                 while (lIter < middle && rIter < right) {
                     if (copy[lIter] <= copy[rIter]) {
-                        swaps += lIter - i > 0 ? lIter - i : 0;
+                        swaps += max(lIter - i, 0);
                         arr[i] = copy[lIter++];
                     } else {
-                        swaps += rIter - i > 0 ? rIter - i : 0;
+                        swaps += max(rIter - i, 0);
                         arr[i] = copy[rIter++];
                     }
                     i++;

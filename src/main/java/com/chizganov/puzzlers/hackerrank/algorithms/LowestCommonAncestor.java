@@ -23,7 +23,7 @@ class LowestCommonAncestor {
     @SuppressWarnings("Duplicates")
     static class Node {
 
-        private int data;
+        private final int data;
         private Node left;
         private Node right;
 

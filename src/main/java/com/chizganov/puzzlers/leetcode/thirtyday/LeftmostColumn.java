@@ -37,8 +37,8 @@ class LeftmostColumn {
 
     static class BinaryMatrix {
 
-        private int[][] matrix;
-        private List<Integer> dimensions;
+        private final int[][] matrix;
+        private final List<Integer> dimensions;
 
         BinaryMatrix(int[][] matrix) {
             this.matrix = matrix;

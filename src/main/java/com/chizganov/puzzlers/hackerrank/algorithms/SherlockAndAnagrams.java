@@ -12,7 +12,7 @@ import static java.util.Arrays.sort;
  */
 class SherlockAndAnagrams {
 
-    private static int[] combinations = new int[100];
+    private static final int[] combinations = new int[100];
 
     static {
         combinations[0] = 0;

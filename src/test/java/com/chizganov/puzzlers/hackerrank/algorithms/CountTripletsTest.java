@@ -24,7 +24,7 @@ class CountTripletsTest {
 
         try (Scanner in = new Scanner(inStream);
              Scanner out = new Scanner(outStream)) {
-            int n = in.nextInt();
+            in.nextInt();
             int r = in.nextInt();
             in.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 
@@ -35,6 +35,7 @@ class CountTripletsTest {
 
             Long actualResult = solution.countTriplets(arr, r);
             Long expectedResult = out.nextLong();
+
             assertEquals(expectedResult, actualResult);
         }
     }

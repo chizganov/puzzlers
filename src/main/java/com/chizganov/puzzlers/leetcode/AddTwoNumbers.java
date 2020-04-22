@@ -40,7 +40,7 @@ class AddTwoNumbers {
     }
 
     static class ListNode {
-        int val;
+        final int val;
         ListNode next;
 
         ListNode(int x) {

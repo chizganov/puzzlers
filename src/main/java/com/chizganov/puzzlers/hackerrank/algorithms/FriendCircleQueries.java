@@ -24,7 +24,7 @@ class FriendCircleQueries {
 
     private static class FriendDisjointSet {
 
-        Map<Integer, Node> nodeToParent = new HashMap<>();
+        final Map<Integer, Node> nodeToParent = new HashMap<>();
         int maxSize = 1;
 
         void union(int n1, int n2) {
@@ -64,7 +64,7 @@ class FriendCircleQueries {
         }
 
         private static final class Node {
-            int node;
+            final int node;
             int size;
 
             Node(int node) {
