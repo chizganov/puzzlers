@@ -14,7 +14,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class HappyNumberTest {
 
     @ParameterizedTest
-    @TestSource(HappyNumber.class)
+    @TestSource(value = HappyNumber.class,
+            implementations = {HappyNumber.class, HappyNumber.FloydSolution.class})
     void isHappy(HappyNumber solution, Path input, Path output) throws IOException {
         try (BufferedReader in = Files.newBufferedReader(input);
              BufferedReader out = Files.newBufferedReader(output)) {

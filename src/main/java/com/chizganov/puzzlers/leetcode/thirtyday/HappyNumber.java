@@ -32,4 +32,22 @@ class HappyNumber {
         return sum;
     }
 
+    static class FloydSolution extends HappyNumber {
+
+        @Override boolean isHappy(int n) {
+            int slow = n;
+            int fast = n;
+
+            do {
+                slow = digitSquareSum(slow);
+                fast = digitSquareSum(fast);
+                fast = digitSquareSum(fast);
+            } while (slow != fast);
+
+            return slow == 1;
+        }
+
+
+    }
+
 }
