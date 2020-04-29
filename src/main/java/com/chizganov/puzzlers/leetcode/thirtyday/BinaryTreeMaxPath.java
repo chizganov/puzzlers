@@ -14,19 +14,11 @@ class BinaryTreeMaxPath {
     }
 
     private static TreeStats treeStats(TreeNode node) {
-        final int val = node.getVal();
-        final TreeNode leftNode = node.getLeft();
-        final TreeNode rightNode = node.getRight();
+        if (node == null) return TreeStats.EMPTY;
 
-        if (leftNode == null && rightNode == null) return new TreeStats(val, val);
-        else if (leftNode == null || rightNode == null) {
-            TreeNode nonNullNode = leftNode != null ? leftNode : rightNode;
-            TreeStats stats = treeStats(nonNullNode);
-            return new TreeStats(positiveOrZero(stats.maxPath) + val, max(stats.maxTree, stats.maxPath + val, val));
-        }
-
-        TreeStats leftStats = treeStats(leftNode);
-        TreeStats rightStats = treeStats(rightNode);
+        int val = node.getVal();
+        TreeStats leftStats = treeStats(node.getLeft());
+        TreeStats rightStats = treeStats(node.getRight());
 
         return new TreeStats(
                 max(leftStats.maxPath, rightStats.maxPath, 0) + val,
@@ -44,6 +36,8 @@ class BinaryTreeMaxPath {
     }
 
     private static class TreeStats {
+
+        private static final TreeStats EMPTY = new TreeStats(0, Integer.MIN_VALUE);
 
         private final int maxPath;
         private final int maxTree;
