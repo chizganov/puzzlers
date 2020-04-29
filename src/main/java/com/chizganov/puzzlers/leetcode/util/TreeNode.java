@@ -1,7 +1,10 @@
 package com.chizganov.puzzlers.leetcode.util;
 
+import java.util.ArrayDeque;
 import java.util.LinkedList;
 import java.util.Queue;
+
+import static java.lang.Integer.parseInt;
 
 /**
  * Binary tree implementation for leetcode challenges.
@@ -36,6 +39,34 @@ public class TreeNode {
         this.val = val;
         this.left = left;
         this.right = right;
+    }
+
+    public static TreeNode createBinaryTreeFromBfsString(String bfsString, String delimiter, String nilLeaf) {
+        if (bfsString == null) return null;
+
+        String[] nodes = bfsString.split(delimiter);
+        if (nodes.length >= 1 && nodes[0].equals(nilLeaf)) return null;
+
+        TreeNode root = new TreeNode(parseInt(nodes[0]));
+
+        Queue<TreeNode> nodeQueue = new ArrayDeque<>(nodes.length);
+        nodeQueue.add(root);
+        TreeNode current;
+        for (int i = 1; i < nodes.length; i += 2) {
+            current = nodeQueue.remove();
+            if (!nodes[i].equals(nilLeaf)) {
+                TreeNode left = new TreeNode(parseInt(nodes[i]));
+                current.setLeft(left);
+                nodeQueue.add(left);
+            }
+            if (i + 1 < nodes.length && !nodes[i + 1].equals(nilLeaf)) {
+                TreeNode right = new TreeNode(parseInt(nodes[i + 1]));
+                current.setRight(right);
+                nodeQueue.add(right);
+            }
+        }
+
+        return root;
     }
 
     public int getVal() {
