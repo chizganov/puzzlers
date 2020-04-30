@@ -20,19 +20,21 @@ import static java.util.Objects.requireNonNull;
 import static java.util.stream.Collectors.groupingBy;
 
 /**
- * {@code TestSourceProvider} is an {@code ArgumentsProvider} which uses {@link TestSource}
- * to provide test resources to a {@code @ParameterizedTest} method as a stream of {@code Arguments}.
+ * {@code TestSourceProvider} is an {@link ArgumentsProvider} which uses {@link TestSource}
+ * to provide test resources to a {@link org.junit.jupiter.params.ParameterizedTest} method as a stream of {@link Arguments}.
  * <p>
  * Used as a provider of class instance and resources for testing.
  * <p>
+ * <p>
  * Example:
- * {@code
+ * <blockquote><pre>
+ * {@literal @}ParameterizedTest
+ * {@literal @}TestSource(TestedClass.class)
+ *  void testSolution(TestedClass instance, Path input, Path output) {
+ *  ...
+ *  }
+ * </pre></blockquote>
  *
- * @ParameterizedTest
- * @TestSource(TestedClass.class) void testSolution(TestedClass instance, Path input, Path output) {
- * ...
- * }
- * }
  * @see org.junit.jupiter.params.provider.Arguments
  * @see org.junit.jupiter.params.provider.ArgumentsProvider
  * @see org.junit.jupiter.params.ParameterizedTest
@@ -73,8 +75,10 @@ public class TestSourceProvider implements ArgumentsProvider, AnnotationConsumer
 
     /**
      * Creates arguments for parametrized tests as:
-     * - for each implementation new instance and resources;
-     * - if implementation is null new instance of clazz and resources.
+     * <ul>
+     * <li>for each implementation new instance and resources;</li>
+     * <li>if implementation is null new instance of clazz and resources.</li>
+     * </ul>
      *
      * @param resources list of resources to provide for each arguments object
      * @return stream of arguments

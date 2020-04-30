@@ -8,7 +8,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * {@code @TestSource} is an {@code ArgumentsSource} which provides access to
+ * {@code @TestSource} is an {@link ArgumentsSource} which provides access to
  * tested class and test resources pattern.
  *
  * @see org.junit.jupiter.params.provider.ArgumentsSource
