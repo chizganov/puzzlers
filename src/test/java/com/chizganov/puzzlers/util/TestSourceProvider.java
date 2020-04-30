@@ -45,8 +45,10 @@ public class TestSourceProvider implements ArgumentsProvider, AnnotationConsumer
     private String testFilePattern;
 
     @Override public Stream<? extends Arguments> provideArguments(ExtensionContext extensionContext) throws Exception {
+        String resourceRelPath = clazz.getName().replace('.', '/') + "/";
         Path path = Paths.get(
-                requireNonNull(clazz.getClassLoader().getResource(clazz.getName().replace('.', '/') + "/")).toURI()
+                requireNonNull(clazz.getClassLoader().getResource(resourceRelPath),
+                        "Cannot find resource path: " + resourceRelPath).toURI()
         );
         Map<Integer, List<Path>> testNumsToPaths;
         try (Stream<Path> files = Files.walk(path)) {
