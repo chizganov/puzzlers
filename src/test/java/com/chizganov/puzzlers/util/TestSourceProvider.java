@@ -83,7 +83,7 @@ public class TestSourceProvider implements ArgumentsProvider, AnnotationConsumer
         Class<?>[] impls = implementations.length != 0 ? implementations : new Class<?>[]{clazz};
         try {
             for (Class<?> clazz : impls) {
-                Constructor constructor = clazz.getDeclaredConstructor();
+                Constructor<?> constructor = clazz.getDeclaredConstructor();
                 constructor.setAccessible(true);
                 Object testedObj = constructor.newInstance();
 
