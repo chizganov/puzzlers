@@ -1,5 +1,6 @@
 # Puzzlers
 This repository contains a set of programming puzzles that are solved using Java programming language.
+
 ## Project structure
 The project directory structure is as following:
 
@@ -10,4 +11,15 @@ The project directory structure is as following:
     │   ├── resources/.../*tested-class-name*/    # Tested class resources (input and output files)
     ├── LICENSE
     └── README.md
-    
+
+## Leetcode
+The following challenges were taken from the [Leetcode](https://leetcode.com/).
+
+### [May LeetCoding Challenge](https://leetcode.com/explore/featured/card/may-leetcoding-challenge/)
+This challenge consists of 31 daily problems over the month of May. Beginner-friendly.
+
+| Day | Problem | Solution |
+| --- | ------------- | --- |
+| 1   | [First Bad Version](https://leetcode.com/explore/featured/card/may-leetcoding-challenge/534/week-1-may-1st-may-7th/3316/)  | [FirstBadVersion.java](src/main/java/com/chizganov/puzzlers/leetcode/may/FirstBadVersion.java)
+
+
