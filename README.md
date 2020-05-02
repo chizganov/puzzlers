@@ -20,6 +20,7 @@ This challenge consists of 31 daily problems over the month of May. Beginner-fri
 
 | Day | Problem | Solution |
 | --- | ------------- | --- |
-| 1   | [First Bad Version](https://leetcode.com/explore/featured/card/may-leetcoding-challenge/534/week-1-may-1st-may-7th/3316/)  | [FirstBadVersion.java](src/main/java/com/chizganov/puzzlers/leetcode/may/FirstBadVersion.java)
+| 1   | [First Bad Version](https://leetcode.com/explore/featured/card/may-leetcoding-challenge/534/week-1-may-1st-may-7th/3316/) | [FirstBadVersion.java](src/main/java/com/chizganov/puzzlers/leetcode/may/FirstBadVersion.java) |
+| 2   | [Jewels And Stones](https://leetcode.com/explore/featured/card/may-leetcoding-challenge/534/week-1-may-1st-may-7th/3317/) | [JewelsAndStones.java](src/main/java/com/chizganov/puzzlers/leetcode/may/JewelsAndStones.java) |
 
 
