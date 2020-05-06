@@ -16,7 +16,10 @@ class MajorityElementTest {
 
     @ParameterizedTest
     @TestSource(value = MajorityElement.class,
-            implementations = {MajorityElement.class, MajorityElement.MapSolution.class})
+            implementations = {
+                    MajorityElement.class,
+                    MajorityElement.MapSolution.class,
+                    MajorityElement.BoyerMooreSolution.class})
     void majorityElement(MajorityElement solution, Path input, Path output) throws IOException {
         try (BufferedReader in = newBufferedReader(input);
              BufferedReader out = newBufferedReader(output)) {

@@ -31,4 +31,20 @@ class MajorityElement {
         }
     }
 
+    static final class BoyerMooreSolution extends MajorityElement {
+
+        @Override int majorityElement(int[] nums) {
+            int count = 0;
+            Integer candidate = null;
+
+            for (int num : nums) {
+                if (count == 0) candidate = num;
+                count += (num == candidate) ? 1 : -1;
+            }
+
+            if (candidate == null) throw new IllegalArgumentException("No majority element.");
+            return candidate;
+        }
+    }
+
 }
