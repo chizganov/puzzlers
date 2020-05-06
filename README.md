@@ -25,5 +25,6 @@ This challenge consists of 31 daily problems over the month of May. Beginner-fri
 | 3   | [Ransom Note](https://leetcode.com/explore/featured/card/may-leetcoding-challenge/534/week-1-may-1st-may-7th/3318/) | [RansomNote.java](src/main/java/com/chizganov/puzzlers/leetcode/may/RansomNote.java) |
 | 4   | [Number Complement](https://leetcode.com/explore/featured/card/may-leetcoding-challenge/534/week-1-may-1st-may-7th/3319/) | [NumberComplement.java](src/main/java/com/chizganov/puzzlers/leetcode/may/NumberComplement.java) |
 | 5   | [First Unique Character in a String](https://leetcode.com/explore/featured/card/may-leetcoding-challenge/534/week-1-may-1st-may-7th/3320/) | [FirstUniqueChar.java](src/main/java/com/chizganov/puzzlers/leetcode/may/FirstUniqueChar.java) |
+| 6   | [Majority Element](https://leetcode.com/explore/featured/card/may-leetcoding-challenge/534/week-1-may-1st-may-7th/3321/) | [MajorityElement.java](src/main/java/com/chizganov/puzzlers/leetcode/may/MajorityElement.java) |
 
 
