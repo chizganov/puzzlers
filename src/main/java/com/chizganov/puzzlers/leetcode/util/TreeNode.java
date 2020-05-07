@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 import static java.lang.Integer.parseInt;
+import static java.util.Objects.requireNonNull;
 
 /**
  * Binary tree implementation for leetcode challenges.
@@ -42,7 +43,9 @@ public class TreeNode {
     }
 
     public static TreeNode createBinaryTreeFromBfsString(String bfsString, String delimiter, String nilLeaf) {
-        if (bfsString == null) return null;
+        requireNonNull(bfsString);
+        requireNonNull(delimiter);
+        requireNonNull(nilLeaf);
 
         String[] nodes = bfsString.split(delimiter);
         if (nodes.length >= 1 && nodes[0].equals(nilLeaf)) return null;
