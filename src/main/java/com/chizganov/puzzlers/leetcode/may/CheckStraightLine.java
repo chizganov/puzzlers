@@ -11,19 +11,13 @@ class CheckStraightLine {
     private static final int Y = 1;
 
     boolean checkStraightLine(int[][] coordinates) {
-        int a = coordinates[1][X] - coordinates[0][X];
-        int b = coordinates[0][Y] - coordinates[1][Y];
-        int c = coordinates[0][X] * coordinates[1][Y] - coordinates[1][X] * coordinates[0][Y];
+        int dx = coordinates[1][X] - coordinates[0][X];
+        int dy = coordinates[1][Y] - coordinates[0][Y];
 
-        for (int[] point : coordinates) {
-            if (!isLinearEquationSolution(a, b, c, point[X], point[Y])) return false;
-        }
+        for (int[] point : coordinates)
+            if (dx * (point[Y] - coordinates[1][Y]) != dy * (point[X] - coordinates[1][X])) return false;
 
         return true;
-    }
-
-    private boolean isLinearEquationSolution(int a, int b, int c, int x, int y) {
-        return b * x + a * y + c == 0;
     }
 
 }
