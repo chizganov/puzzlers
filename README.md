@@ -28,5 +28,5 @@ This challenge consists of 31 daily problems over the month of May. Beginner-fri
 | 6   | [Majority Element](https://leetcode.com/explore/featured/card/may-leetcoding-challenge/534/week-1-may-1st-may-7th/3321/) | [MajorityElement.java](src/main/java/com/chizganov/puzzlers/leetcode/may/MajorityElement.java) |
 | 7   | [Cousins in Binary Tree](https://leetcode.com/explore/featured/card/may-leetcoding-challenge/534/week-1-may-1st-may-7th/3322/) | [CousinsInBinaryTree.java](src/main/java/com/chizganov/puzzlers/leetcode/may/CousinsInBinaryTree.java) |
 | 8   | [Check If It Is a Straight Line](https://leetcode.com/explore/featured/card/may-leetcoding-challenge/535/week-2-may-8th-may-14th/3323/) | [CheckStraightLine.java](src/main/java/com/chizganov/puzzlers/leetcode/may/CheckStraightLine.java) |
-
+| 9   | [Valid Perfect Square](https://leetcode.com/explore/featured/card/may-leetcoding-challenge/535/week-2-may-8th-may-14th/3324/) | [ValidPerfectSquare.java](src/main/java/com/chizganov/puzzlers/leetcode/may/ValidPerfectSquare.java) |
 
