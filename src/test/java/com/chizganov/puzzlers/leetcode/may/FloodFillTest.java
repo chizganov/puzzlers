@@ -17,7 +17,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class FloodFillTest {
 
     @ParameterizedTest
-    @TestSource(FloodFill.class)
+    @TestSource(value = FloodFill.class,
+            implementations = {FloodFill.class, FloodFill.RecursiveSolution.class})
     void floodFill(FloodFill solution, Path input, Path output) throws IOException {
         try (BufferedReader in = newBufferedReader(input);
              BufferedReader out = newBufferedReader(output)) {

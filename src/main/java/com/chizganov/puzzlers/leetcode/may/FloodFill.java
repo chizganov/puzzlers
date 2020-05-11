@@ -33,6 +33,28 @@ class FloodFill {
         return image;
     }
 
+    static final class RecursiveSolution extends FloodFill {
+        @Override int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
+            int oldColor = image[sr][sc];
+
+            if (newColor == oldColor) return image;
+            return recursiveFloodFill(image, sr, sc, oldColor, newColor);
+        }
+
+        int[][] recursiveFloodFill(int[][] image, int row, int col, int oldColor, int newColor) {
+            if (row < 0 || col < 0 || row >= image.length || col >= image[0].length) return image;
+
+            if (image[row][col] == oldColor) {
+                image[row][col] = newColor;
+                recursiveFloodFill(image, row - 1, col, oldColor, newColor);
+                recursiveFloodFill(image, row + 1, col, oldColor, newColor);
+                recursiveFloodFill(image, row, col - 1, oldColor, newColor);
+                recursiveFloodFill(image, row, col + 1, oldColor, newColor);
+            }
+            return image;
+        }
+    }
+
     private static final class Coordinate {
 
         private final int row;
