@@ -19,11 +19,9 @@ class SortCharactersByFrequency {
         for (char c : s.toCharArray()) charToCount.merge(c, 1, Integer::sum);
 
         StringBuilder sb = new StringBuilder(s.length());
-        charToCount.entrySet().stream().sorted(comparingByValue(reverseOrder())).forEachOrdered(e -> {
-            for (int i = 0; i < e.getValue(); i++) {
-                sb.append(e.getKey());
-            }
-        });
+        charToCount.entrySet().stream()
+                .sorted(comparingByValue(reverseOrder()))
+                .forEachOrdered(e -> sb.append(e.getKey().toString().repeat(e.getValue())));
 
         return sb.toString();
     }
