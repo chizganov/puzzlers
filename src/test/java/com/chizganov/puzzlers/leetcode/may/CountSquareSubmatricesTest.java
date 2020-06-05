@@ -16,7 +16,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class CountSquareSubmatricesTest {
 
     @ParameterizedTest
-    @TestSource(CountSquareSubmatrices.class)
+    @TestSource(value = CountSquareSubmatrices.class,
+            implementations = {CountSquareSubmatrices.class, CountSquareSubmatrices.EffectiveSolution.class})
     void countSquares(CountSquareSubmatrices solution, Path input, Path output) throws IOException {
         try (BufferedReader in = newBufferedReader(input);
              BufferedReader out = newBufferedReader(output)) {
