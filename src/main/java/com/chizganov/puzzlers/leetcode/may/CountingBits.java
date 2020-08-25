@@ -9,26 +9,12 @@ class CountingBits {
 
     int[] countBits(int num) {
         int[] bitsCounts = new int[num + 1];
+        if (bitsCounts.length >= 1) bitsCounts[0] = 0;
         if (bitsCounts.length >= 2) bitsCounts[1] = 1;
-        if (bitsCounts.length >= 3) bitsCounts[2] = 1;
-        if (bitsCounts.length >= 4) bitsCounts[3] = 2;
 
-        int startIndex = 4;
-        int rangeLength = 2;
-        int subrangeLength = 2;
-        for (int i = 4; i < bitsCounts.length; i++) {
-            if (i - rangeLength == startIndex) {
-                subrangeLength /= 2;
-                rangeLength += subrangeLength;
-            }
-            if (subrangeLength == 0) {
-                rangeLength++;
-                subrangeLength = rangeLength;
-                bitsCounts[i] = bitsCounts[i - 1] + 1;
-                startIndex = i + 1;
-            } else {
-                bitsCounts[i] = bitsCounts[i - rangeLength];
-            }
+        for (int i = 2; i < bitsCounts.length; i++) {
+            if (i % 2 == 0) bitsCounts[i] = bitsCounts[i / 2];
+            else bitsCounts[i] = bitsCounts[i - 1] + 1;
         }
 
         return bitsCounts;
