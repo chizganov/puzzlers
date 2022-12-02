@@ -2,5 +2,7 @@
 !.idea/fileTemplates/
 
 out/
+build/
 *.iml
 target/
+.gradle
