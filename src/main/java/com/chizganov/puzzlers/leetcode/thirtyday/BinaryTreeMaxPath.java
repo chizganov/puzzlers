@@ -35,17 +35,9 @@ class BinaryTreeMaxPath {
         return Math.max(Math.max(i1, i2), i3);
     }
 
-    private static class TreeStats {
+    private record TreeStats(int maxPath, int maxTree) {
 
         private static final TreeStats EMPTY = new TreeStats(0, Integer.MIN_VALUE);
-
-        private final int maxPath;
-        private final int maxTree;
-
-        TreeStats(int maxPath, int maxTree) {
-            this.maxPath = maxPath;
-            this.maxTree = maxTree;
-        }
 
     }
 

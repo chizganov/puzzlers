@@ -80,7 +80,7 @@ public class TestSourceProvider implements ArgumentsProvider, AnnotationConsumer
      * <li>if implementation is null new instance of clazz and resources.</li>
      * </ul>
      *
-     * @param resources list of resources to provide for each arguments object
+     * @param resources list of resources to provide for each argument's object
      * @return stream of arguments
      */
     private Stream<Arguments> createArguments(List<Path> resources) {

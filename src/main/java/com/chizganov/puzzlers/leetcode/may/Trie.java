@@ -61,7 +61,7 @@ class Trie {
     private static final class TreeNode {
 
         char nChar;
-        Map<Character, TreeNode> children = new HashMap<>();
+        final Map<Character, TreeNode> children = new HashMap<>();
 
         TreeNode() {
         }

@@ -11,11 +11,9 @@ class TheBombermanGame {
 
     String[] bomberMan(int n, String[] grid) {
         if (n == 1) return grid;
-        // Every second second the field is full of bombs
+        // Every second the field is full of bombs
         if (n % 2 == 0) {
-            StringBuilder builder = new StringBuilder();
-            for (int j = 0; j < grid[0].length(); j++) builder.append("O");
-            String line = builder.toString();
+            String line = "O".repeat(grid[0].length());
             Arrays.fill(grid, line);
 
             return grid;
@@ -29,9 +27,11 @@ class TheBombermanGame {
                 if (grid[i].charAt(j) == 'O') a[i][j] = 1;
             }
         }
-        // Every fourth second from 3 or 5 the same
-        // Like 3, 7, 11..
-        // Or 5, 9, 13..
+        /*
+         Every fourth second from 3 or 5 the same
+         As 3, 7, 11..
+         Or 5, 9, 13..
+        */
         int t = 3;
         if ((n - 5) % 4 == 0) t = 5;
         for (int i = 3; i <= t; i += 2) {

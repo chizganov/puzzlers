@@ -19,7 +19,7 @@ class KthSmallestElementInBstTest {
     void kthSmallest(KthSmallestElementInBst solution, Path input, Path output) throws IOException {
         try (BufferedReader in = newBufferedReader(input);
              BufferedReader out = newBufferedReader(output)) {
-            String btreeString = in.readLine().replaceAll("(^[^\\d]*|[^\\d]*$)", "");
+            String btreeString = in.readLine().replaceAll("(^\\D*|\\D*$)", "");
             int k = parseInt(in.readLine());
 
             TreeNode root = TreeNode.createBinaryTreeFromBfsString(btreeString, ",", "null");

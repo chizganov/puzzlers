@@ -55,15 +55,8 @@ class FloodFill {
         }
     }
 
-    private static final class Coordinate {
+    private record Coordinate(int row, int col) {
 
-        private final int row;
-        private final int col;
-
-        Coordinate(int row, int col) {
-            this.row = row;
-            this.col = col;
-        }
     }
 
 }

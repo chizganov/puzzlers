@@ -17,7 +17,7 @@ class ValidPerfectSquare {
 
         while (left < right) {
             int mid = (left + right) / 2;
-            long square = mid * mid;
+            long square = (long) mid * mid;
 
             if (square == num) return true;
             else if (square < num) left = mid + 1;

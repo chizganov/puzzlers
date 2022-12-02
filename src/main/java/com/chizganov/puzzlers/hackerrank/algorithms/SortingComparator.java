@@ -12,30 +12,17 @@ class SortingComparator implements Comparator<SortingComparator.Player> {
 
     @Override
     public int compare(Player a, Player b) {
-        int result = b.getScore() - a.getScore();
-        if (result == 0) return a.getName().compareTo(b.getName());
+        int result = b.score() - a.score();
+        if (result == 0) return a.name().compareTo(b.name());
 
         return result;
     }
 
-    static class Player {
+    record Player(String name, int score) {
 
-        private final String name;
-        private final int score;
-
-        Player(String name, int score) {
+        Player {
             Objects.requireNonNull(name);
 
-            this.name = name;
-            this.score = score;
-        }
-
-        String getName() {
-            return name;
-        }
-
-        int getScore() {
-            return score;
         }
 
         @Override
@@ -47,10 +34,6 @@ class SortingComparator implements Comparator<SortingComparator.Player> {
                     name.equals(player.name);
         }
 
-        @Override
-        public int hashCode() {
-            return Objects.hash(name, score);
-        }
     }
 
 }

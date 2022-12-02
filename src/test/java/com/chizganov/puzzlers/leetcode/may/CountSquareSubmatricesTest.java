@@ -22,9 +22,9 @@ class CountSquareSubmatricesTest {
         try (BufferedReader in = newBufferedReader(input);
              BufferedReader out = newBufferedReader(output)) {
             int[][] matrix = in.lines().map(
-                    line -> stream(line.replaceAll("(^[^\\d]*|[^\\d]*$)", "").split(","))
-                            .mapToInt(Integer::parseInt)
-                            .toArray())
+                            line -> stream(line.replaceAll("(^\\D*|\\D*$)", "").split(","))
+                                    .mapToInt(Integer::parseInt)
+                                    .toArray())
                     .toArray(int[][]::new);
             String matrixString = Arrays.deepToString(matrix);
 

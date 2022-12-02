@@ -30,8 +30,8 @@ class NumberOfIslands {
                     visitQueue.add(new Point(j, i));
                     while (!visitQueue.isEmpty()) {
                         Point point = visitQueue.remove();
-                        int x = point.getX();
-                        int y = point.getY();
+                        int x = point.x();
+                        int y = point.y();
 
                         visited[y][x] = true;
                         // Check neighbor points
@@ -55,23 +55,8 @@ class NumberOfIslands {
         return c == '1';
     }
 
-    static class Point {
+    record Point(int x, int y) {
 
-        Point(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-
-        private final int x;
-        private final int y;
-
-        public int getX() {
-            return x;
-        }
-
-        public int getY() {
-            return y;
-        }
     }
 
     static class RecursiveSolution extends NumberOfIslands {

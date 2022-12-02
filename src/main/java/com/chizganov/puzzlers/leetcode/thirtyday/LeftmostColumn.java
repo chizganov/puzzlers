@@ -1,9 +1,6 @@
 package com.chizganov.puzzlers.leetcode.thirtyday;
 
-import java.util.Collections;
 import java.util.List;
-
-import static java.util.Arrays.asList;
 
 /**
  * <a href="https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/530/week-3/3306/">Leftmost Column with at Least a One challenge</a>
@@ -42,7 +39,7 @@ class LeftmostColumn {
 
         BinaryMatrix(int[][] matrix) {
             this.matrix = matrix;
-            dimensions = Collections.unmodifiableList(asList(matrix.length, matrix[0].length));
+            dimensions = List.of(matrix.length, matrix[0].length);
         }
 
         int get(int x, int y) {

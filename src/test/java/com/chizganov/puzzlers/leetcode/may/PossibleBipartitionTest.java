@@ -23,7 +23,7 @@ class PossibleBipartitionTest {
              BufferedReader out = newBufferedReader(output)) {
             int n = parseInt(in.readLine());
             String dislikesString = in.readLine();
-            int[][] dislikes = stream(dislikesString.replaceAll("(^[^\\d]*|[^\\d]*$)", "").split("],\\["))
+            int[][] dislikes = stream(dislikesString.replaceAll("(^\\D*|\\D*$)", "").split("],\\["))
                     .map(arr -> stream(arr.split(",")).mapToInt(Integer::parseInt).toArray())
                     .toArray(int[][]::new);
 

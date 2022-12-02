@@ -16,7 +16,7 @@ class ArrayManipulation {
             int k = q[2];
 
             arr[a] += k;
-            if (b + 1 < n) arr[b + 1] += -k;
+            if (b + 1 < n) arr[b + 1] -= k;
         }
 
         long max = arr[0];

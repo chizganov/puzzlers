@@ -10,6 +10,7 @@ import java.util.Map;
  *
  * @author Ev Chizganov
  */
+@SuppressWarnings("DuplicatedCode")
 class FindAllAnagrams {
 
     List<Integer> findAnagrams(String s, String p) {

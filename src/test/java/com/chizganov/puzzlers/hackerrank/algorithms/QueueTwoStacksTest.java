@@ -11,7 +11,6 @@ import java.util.List;
 
 import static java.lang.Integer.parseInt;
 import static java.nio.file.Files.newBufferedReader;
-import static java.util.stream.Collectors.toList;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class QueueTwoStacksTest {
@@ -23,21 +22,17 @@ class QueueTwoStacksTest {
              BufferedReader out = newBufferedReader(output)) {
             in.readLine();
 
-            List<String[]> queries = in.lines().map(s -> s.split(" ")).collect(toList());
+            List<String[]> queries = in.lines().map(s -> s.split(" ")).toList();
 
             List<String> resultList = new ArrayList<>();
             for (String[] query : queries) {
                 switch (parseInt(query[0])) {
-                    case 1:
-                        solution.enqueue(parseInt(query[1]));
-                        break;
-                    case 2:
-                        solution.dequeue();
-                        break;
-                    case 3:
+                    case 1 -> solution.enqueue(parseInt(query[1]));
+                    case 2 -> solution.dequeue();
+                    case 3 -> {
                         Integer e = solution.peek();
                         resultList.add(e.toString());
-                        break;
+                    }
                 }
             }
 

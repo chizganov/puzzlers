@@ -24,9 +24,9 @@ class CountTriplets {
             long next = b * r;
             if (pairs.containsKey(next)) count += pairs.get(next);
             if (occurrences.containsKey(next))
-                pairs.merge(b, occurrences.get(next), (oldVal, newVal) -> oldVal += newVal);
+                pairs.merge(b, occurrences.get(next), Long::sum);
 
-            occurrences.merge(b, 1L, (oldVal, newVal) -> oldVal += newVal);
+            occurrences.merge(b, 1L, Long::sum);
         }
 
         return count;

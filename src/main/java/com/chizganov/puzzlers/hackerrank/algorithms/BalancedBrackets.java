@@ -1,6 +1,8 @@
 package com.chizganov.puzzlers.hackerrank.algorithms;
 
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.Map;
 
 /**
  * <a href="https://www.hackerrank.com/challenges/balanced-brackets/problem">Balanced Brackets challenge</a>
@@ -26,12 +28,8 @@ class BalancedBrackets {
     }
 
     private static Map<Character, Character> initBracketsMap() {
-        Map<Character, Character> brackets = new HashMap<>();
-        brackets.put('{', '}');
-        brackets.put('(', ')');
-        brackets.put('[', ']');
 
-        return Collections.unmodifiableMap(brackets);
+        return Map.of('{', '}', '(', ')', '[', ']');
     }
 
 }

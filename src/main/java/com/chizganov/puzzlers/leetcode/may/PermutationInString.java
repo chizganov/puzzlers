@@ -8,6 +8,7 @@ import java.util.Map;
  *
  * @author Ev Chizganov
  */
+@SuppressWarnings("DuplicatedCode")
 class PermutationInString {
 
     boolean checkInclusion(String s1, String s2) {

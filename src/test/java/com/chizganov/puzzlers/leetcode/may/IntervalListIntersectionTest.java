@@ -39,7 +39,7 @@ class IntervalListIntersectionTest {
     }
 
     private int[][] parse2dArrayString(String string) {
-        return stream(string.replaceAll("(^[^\\d]*|[^\\d]*$)", "").split("],\\["))
+        return stream(string.replaceAll("(^\\D*|\\D*$)", "").split("],\\["))
                 .map(arr -> stream(arr.split(",")).mapToInt(Integer::parseInt).toArray())
                 .toArray(int[][]::new);
     }

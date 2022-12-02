@@ -14,7 +14,7 @@ class MultiplesOfThreeAndFive {
     }
 
     private long arithmeticProgressionSum(int a1, long n, int d) {
-        return (2 * a1 + (n - 1) * d) * n / 2;
+        return (2L * a1 + (n - 1) * d) * n / 2;
     }
 
 }

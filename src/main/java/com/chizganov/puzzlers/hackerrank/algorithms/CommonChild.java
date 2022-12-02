@@ -1,15 +1,15 @@
 package com.chizganov.puzzlers.hackerrank.algorithms;
 
 /**
-* The longest common subsequence (LCS) problem is the problem of finding
-* the longest subsequence common to all sequences in a set of sequences
-* (often just two sequences).
-* It differs from the longest common substring problem.
-*
-* <a href="https://www.hackerrank.com/challenges/common-child/problem">Common Child challenge</a>
-*
-* @author Ev Chizganov
-* */
+ * The longest common subsequence (LCS) problem is the problem of finding
+ * the longest subsequence common to all sequences in a set of sequences
+ * (often just two sequences).
+ * It differs from the longest common substring problem.
+ * <p>
+ * <a href="https://www.hackerrank.com/challenges/common-child/problem">Common Child challenge</a>
+ *
+ * @author Ev Chizganov
+ */
 class CommonChild {
 
     // Recursion version

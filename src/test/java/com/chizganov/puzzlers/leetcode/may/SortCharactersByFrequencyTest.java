@@ -28,7 +28,7 @@ class SortCharactersByFrequencyTest {
                     String.format("\nInput string: %s\nActual output string: %s\nExpected output strings: %s",
                             inString,
                             actualResult,
-                            expectedResultSet.toString()
+                            expectedResultSet
                     )
             );
         }
