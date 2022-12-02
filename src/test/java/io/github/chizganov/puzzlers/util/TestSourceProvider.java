@@ -1,5 +1,6 @@
 package io.github.chizganov.puzzlers.util;
 
+import org.junit.jupiter.api.Named;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.ArgumentsProvider;
@@ -18,6 +19,8 @@ import java.util.stream.Stream;
 import static java.lang.System.arraycopy;
 import static java.util.Objects.requireNonNull;
 import static java.util.stream.Collectors.groupingBy;
+import static org.junit.jupiter.api.Named.named;
+import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 /**
  * {@code TestSourceProvider} is an {@link ArgumentsProvider} which uses {@link TestSource}
@@ -85,7 +88,6 @@ public class TestSourceProvider implements ArgumentsProvider, AnnotationConsumer
      */
     private Stream<Arguments> createArguments(List<Path> resources) {
         List<Arguments> argsList = new ArrayList<>();
-        Object[] resourcesArr = resources.toArray();
         Class<?>[] impls = implementations.length != 0 ? implementations : new Class<?>[]{clazz};
         try {
             for (Class<?> clazz : impls) {
@@ -93,11 +95,14 @@ public class TestSourceProvider implements ArgumentsProvider, AnnotationConsumer
                 constructor.setAccessible(true);
                 Object testedObj = constructor.newInstance();
 
-                Object[] args = new Object[resourcesArr.length + 1];
-                args[0] = testedObj;
-                arraycopy(resourcesArr, 0, args, 1, resourcesArr.length);
+                Object[] args = new Named<?>[resources.size() + 1];
+                args[0] = named(testedObj.getClass().getSimpleName(), testedObj);
+                Object[] namedResources = resources.stream()
+                        .map(path -> named(path.getFileName().toString(), path))
+                        .toArray();
+                arraycopy(namedResources, 0, args, 1, namedResources.length);
 
-                argsList.add(Arguments.of(args));
+                argsList.add(arguments((args)));
             }
             return argsList.stream();
         } catch (NoSuchMethodException e) {
