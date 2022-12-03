@@ -20,11 +20,13 @@ public @interface TestSource {
 
     /**
      * Tested class or interface, used in detection of resources used for testing.
+     * Instance of the value class is created and provided to parameterized test method by default.
+     * Used as single implementation if no custom implementations provided.
      */
     Class<?> value();
 
     /**
-     * Implementations to test.
+     * Implementations to test. If provided no instance of value will be created.
      */
     Class<?>[] implementations() default {};
 

@@ -15,6 +15,27 @@ The project directory structure is as following:
     ├── LICENSE
     └── README.md
 
+### Test source
+
+[TestSource](src/test/java/io/github/chizganov/puzzlers/util/TestSource.java) annotation and
+[TestSourceProvider](src/test/java/io/github/chizganov/puzzlers/util/TestSourceProvider.java) are junit's
+ArgumentProvider implementation
+that search for the test resources (input and output files) in the directory structure same as test(ed) class package.
+Allows to test different class implementations (solutions to the problem) for every input-output pair file as in the
+code snippet below:
+
+```kotlin
+@ParameterizedTest
+@TestSource(
+    value = RucksackReorganization::class, // used as single implementation if no custom implementations provided.
+    implementations = [RucksackReorganization::class, IdiomaticRucksackReorganization::class]
+)
+fun findTotalRearrangementPriority(rucksackReorganization: RucksackReorganization, input: Path, output: Path)
+```
+
+With execution of 4 tests for 2 implementations and 2 input-output pairs.
+![test-results.png](doc/test-results.png)
+
 ## Advent of Code 2022
 
 [Advent of Code 2022](https://adventofcode.com/2022) challenge.
