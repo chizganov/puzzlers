@@ -3,8 +3,8 @@ package io.github.chizganov.puzzlers.adventofcode.twentytwo
 /**
  * Advent of Code 2022 <a href="https://adventofcode.com/2022/day/3">Day 3: Rucksack Reorganization</a>
  * */
-class RucksackReorganization {
-    fun findTotalRearrangementPriority(rucksacks: List<String>): Int {
+open class RucksackReorganization {
+    open fun findTotalRearrangementPriority(rucksacks: List<String>): Int {
         var totalPriority = 0
         val compartmentSet = mutableSetOf<Char>()
         rucksacks.forEach { rucksack ->
@@ -23,7 +23,7 @@ class RucksackReorganization {
         return totalPriority
     }
 
-    fun findTotalBadgePriority(rucksacks: List<String>): Int {
+    open fun findTotalBadgePriority(rucksacks: List<String>): Int {
         var totalPriority = 0
         val groupSize = 3
         for (i in 0..rucksacks.lastIndex step groupSize) {
@@ -35,7 +35,26 @@ class RucksackReorganization {
     }
 
     companion object {
-        private val PRIORITY = 'a'.rangeTo('z').associateWith { it.code.minus('a'.code).plus(1) }
+        @JvmStatic
+        protected val PRIORITY = 'a'.rangeTo('z').associateWith { it.code.minus('a'.code).plus(1) }
             .plus('A'.rangeTo('Z').associateWith { it.code.minus('A'.code).plus(27) })
     }
+}
+
+// Kotlin idiomatic solution based on https://github.com/asm0dey/aoc-2022/blob/main/src/Day03.kt
+class IdiomaticRucksackReorganization : RucksackReorganization() {
+    override fun findTotalRearrangementPriority(rucksacks: List<String>) =
+        rucksacks.asSequence()
+            .map(String::toList)
+            .map { it.subList(0, it.size / 2).toSet().intersect(it.subList(it.size / 2, it.size).toSet()) }
+            .map { it.single() }
+            .sumOf { checkNotNull(PRIORITY[it]) }
+
+    override fun findTotalBadgePriority(rucksacks: List<String>) =
+        rucksacks.asSequence()
+            .chunked(3) {
+                it.map(String::toSet).reduce(Set<Char>::intersect)
+            }
+            .map { it.single() }
+            .sumOf { checkNotNull(PRIORITY[it]) }
 }

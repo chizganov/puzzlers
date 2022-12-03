@@ -9,7 +9,10 @@ import kotlin.test.assertEquals
 internal class RucksackReorganizationTest {
 
     @ParameterizedTest
-    @TestSource(RucksackReorganization::class)
+    @TestSource(
+        value = RucksackReorganization::class,
+        implementations = [RucksackReorganization::class, IdiomaticRucksackReorganization::class]
+    )
     fun findTotalRearrangementPriority(rucksackReorganization: RucksackReorganization, input: Path, output: Path) {
         val rucksacks = input.readLines()
         val expectedTotalPriority = output.readLines().first().toInt()
@@ -17,7 +20,10 @@ internal class RucksackReorganizationTest {
     }
 
     @ParameterizedTest
-    @TestSource(RucksackReorganization::class)
+    @TestSource(
+        value = RucksackReorganization::class,
+        implementations = [RucksackReorganization::class, IdiomaticRucksackReorganization::class]
+    )
     fun findTotalBadgePriority(rucksackReorganization: RucksackReorganization, input: Path, output: Path) {
         val rucksacks = input.readLines()
         val expectedTotalBadgePriority = output.readLines()[1].toInt()
