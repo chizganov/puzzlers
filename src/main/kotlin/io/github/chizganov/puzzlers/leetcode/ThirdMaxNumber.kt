@@ -1,5 +1,9 @@
 package io.github.chizganov.puzzlers.leetcode
 
+/**
+ * LeetCode 414. Third Maximum Number
+ * https://leetcode.com/problems/third-maximum-number/
+ * */
 open class ThirdMaxNumber {
     open fun thirdMax(nums: IntArray): Int {
         val max = IntArray(3)
