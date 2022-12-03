@@ -1,7 +1,9 @@
 # Puzzlers
 This repository contains a set of programming puzzles that are solved using Java or Kotlin programming language.
+Tests provided for every problem.
 
 ## Project structure
+
 The project directory structure is as following:
 
     .
@@ -13,13 +15,23 @@ The project directory structure is as following:
     ├── LICENSE
     └── README.md
 
+## Advent of Code 2022
+
+[Advent of Code 2022](https://adventofcode.com/2022) challenge.
+
+| Day | Problem                                                    | Solution                                                                                                         |
+|-----|------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| 1   | [Calorie Counting](https://adventofcode.com/2022/day/1)    | [CalorieCounting.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/CalorieCounting.kt)     |
+| 2   | [Rock Paper Scissors](https://adventofcode.com/2022/day/2) | [RockPaperScissors.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/RockPaperScissors.kt) |
+
 ## Leetcode
 
 The following challenges were taken from the [Leetcode](https://leetcode.com/).
 
-### [May LeetCoding Challenge](https://leetcode.com/explore/featured/card/may-leetcoding-challenge/)
+### May LeetCoding Challenge
 
-This challenge consists of 31 daily problems over the month of May. Beginner-friendly.
+[May LeetCoding](https://leetcode.com/explore/featured/card/may-leetcoding-challenge/) consists of 31 daily problems
+over the month of May. Beginner-friendly.
 
 | Day | Problem                                                                                                                                                         | Solution                                                                                                                             |
 |-----|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
@@ -51,11 +63,3 @@ This challenge consists of 31 daily problems over the month of May. Beginner-fri
 | 26  | [Contiguous Array](https://leetcode.com/explore/challenge/card/may-leetcoding-challenge/537/week-4-may-22nd-may-28th/3341/)                                     | [ContiguousArray.java](src/main/java/io/github/chizganov/puzzlers/leetcode/may/ContiguousArray.java)                                 |
 | 27  | [Possible Bipartition](https://leetcode.com/explore/challenge/card/may-leetcoding-challenge/537/week-4-may-22nd-may-28th/3342/)                                 | [PossibleBipartition.java](src/main/java/io/github/chizganov/puzzlers/leetcode/may/PossibleBipartition.java)                         |
 | 28  | [Counting Bits](https://leetcode.com/explore/challenge/card/may-leetcoding-challenge/537/week-4-may-22nd-may-28th/3343/)                                        | [CountingBits.java](src/main/java/io/github/chizganov/puzzlers/leetcode/may/CountingBits.java)                                       |
-
-## Advent of Code 2022
-
-[Advent of Code 2022](https://adventofcode.com/2022) challenge
-
-| Day | Problem                                                 | Solution                                                                                                     |
-|-----|---------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| 1   | [Calorie Counting](https://adventofcode.com/2022/day/1) | [CalorieCounting.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/CalorieCounting.kt) |
