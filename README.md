@@ -46,6 +46,7 @@ With execution of 4 tests for 2 implementations and 2 input-output pairs.
 | 2   | [Rock Paper Scissors](https://adventofcode.com/2022/day/2)     | [RockPaperScissors.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/RockPaperScissors.kt)           |
 | 3   | [Rucksack Reorganization](https://adventofcode.com/2022/day/3) | [RucksackReorganization.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/RucksackReorganization.kt) |
 | 4   | [Camp of Cleanup](https://adventofcode.com/2022/day/4)         | [CampCleanup.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/CampCleanup.kt)                       |
+| 5   | [Supply Stacks](https://adventofcode.com/2022/day/5)           | [SupplyStacks.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/SupplyStacks.kt)                     |
 
 ## Leetcode
 
