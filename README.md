@@ -4,7 +4,7 @@ Tests provided for every problem.
 
 ## Project structure
 
-The project directory structure is as following:
+The project directory structure is as follows:
 
     .
     ├── src/main                                  # Source files
@@ -20,7 +20,8 @@ The project directory structure is as following:
 [TestSource](src/test/java/io/github/chizganov/puzzlers/util/TestSource.java) annotation and
 [TestSourceProvider](src/test/java/io/github/chizganov/puzzlers/util/TestSourceProvider.java) are junit's
 ArgumentProvider implementation
-that search for the test resources (input and output files) in the directory structure same as test(ed) class package.
+that search for the test resources (input and output files) in the directory structure, the same as test(ed) class
+package.
 Allows to test different class implementations (solutions to the problem) for every input-output pair file as in the
 code snippet below:
 
@@ -47,15 +48,16 @@ With execution of 4 tests for 2 implementations and 2 input-output pairs.
 | 3   | [Rucksack Reorganization](https://adventofcode.com/2022/day/3) | [RucksackReorganization.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/RucksackReorganization.kt) |
 | 4   | [Camp of Cleanup](https://adventofcode.com/2022/day/4)         | [CampCleanup.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/CampCleanup.kt)                       |
 | 5   | [Supply Stacks](https://adventofcode.com/2022/day/5)           | [SupplyStacks.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/SupplyStacks.kt)                     |
+| 6   | [Tuning Trouble](https://adventofcode.com/2022/day/6)          | [TuningTrouble.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/TuningTrouble.kt)                   |
 
 ## Leetcode
 
-The following challenges were taken from the [Leetcode](https://leetcode.com/).
+The following challenges from the [Leetcode](https://leetcode.com/).
 
 ### May LeetCoding Challenge
 
 [May LeetCoding](https://leetcode.com/explore/featured/card/may-leetcoding-challenge/) consists of 31 daily problems
-over the month of May. Beginner-friendly.
+over May. Beginner-friendly.
 
 | Day | Problem                                                                                                                                                         | Solution                                                                                                                             |
 |-----|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
