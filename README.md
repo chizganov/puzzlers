@@ -50,6 +50,7 @@ With execution of 4 tests for 2 implementations and 2 input-output pairs.
 | 5   | [Supply Stacks](https://adventofcode.com/2022/day/5)           | [SupplyStacks.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/SupplyStacks.kt)                     |
 | 6   | [Tuning Trouble](https://adventofcode.com/2022/day/6)          | [TuningTrouble.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/TuningTrouble.kt)                   |
 | 7   | [No Space Left On Device](https://adventofcode.com/2022/day/7) | [DeviceSpace.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/DeviceSpace.kt)                       |
+| 8   | [Treetop Tree House](https://adventofcode.com/2022/day/8)      | [TreetopTreeHouse.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/TreetopTreeHouse.kt)             |
 
 ## Leetcode
 
