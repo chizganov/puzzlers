@@ -34,7 +34,7 @@ class DeviceSpace {
             val commandInput = terminalOutputWords.removeFirst()
             if (commandInput[0] != COMMAND_SIGN || commandInput.size < 2) continue
 
-            val command = requireNotNull(commands.find { commandInput[1] in it.aliases() })
+            val command = requireNotNull(commands.find { commandInput[1] in it.aliases })
             val commandArguments = commandInput.subList(2, commandInput.size)
             val commandOutput = terminalOutputWords.takeWhile { it.first() != COMMAND_SIGN }
             val commandContext = CommandContext(deviceState, commandArguments, commandOutput)
@@ -47,12 +47,14 @@ class DeviceSpace {
     }
 
     private interface TerminalParseCommand {
+        val aliases: List<String>
         fun parse(context: CommandContext)
-        fun aliases(): List<String>
     }
 
     private class CdCommand : TerminalParseCommand {
-        override fun aliases() = listOf("cd")
+
+        override val aliases: List<String>
+            get() = listOf("cd")
 
         override fun parse(context: CommandContext) {
             when (val directoryName = context.commandArguments.first()) {
@@ -65,7 +67,9 @@ class DeviceSpace {
     }
 
     private class LsCommand : TerminalParseCommand {
-        override fun aliases() = listOf("ls")
+
+        override val aliases: List<String>
+            get() = listOf("ls")
 
         override fun parse(context: CommandContext) {
             val currentDirectory = context.deviceState.currentDirectory
