@@ -9,7 +9,7 @@ import kotlin.test.assertEquals
 internal class TuningTroubleTest {
 
     @ParameterizedTest
-    @TestSource(TuningTrouble::class)
+    @TestSource(TuningTrouble::class, implementations = [TuningTrouble::class, WindowedTuningTrouble::class])
     fun findFirstMarkerOccurrence(tuningTrouble: TuningTrouble, input: Path, output: Path) {
         val buffer = input.readLines().single()
         val expectedFirstMarkerOccurrence = output.readLines().map(String::toInt)
