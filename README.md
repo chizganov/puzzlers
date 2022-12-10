@@ -52,6 +52,7 @@ With execution of 4 tests for 2 implementations and 2 input-output pairs.
 | 7   | [No Space Left On Device](https://adventofcode.com/2022/day/7) | [DeviceSpace.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/DeviceSpace.kt)                       |
 | 8   | [Treetop Tree House](https://adventofcode.com/2022/day/8)      | [TreetopTreeHouse.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/TreetopTreeHouse.kt)             |
 | 9   | [Rope Bridge](https://adventofcode.com/2022/day/9)             | [RopeBridge.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/RopeBridge.kt)                         |
+| 10  | [Cathode-Ray Tube](https://adventofcode.com/2022/day/10)       | [CathodeRayTube.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/CathodeRayTube.kt)                 |
 
 ## Leetcode
 
