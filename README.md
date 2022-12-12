@@ -1,4 +1,5 @@
 # Puzzlers
+
 This repository contains a set of programming puzzles that are solved using Java or Kotlin programming language.
 Tests provided for every problem.
 
@@ -41,19 +42,20 @@ With execution of 4 tests for 2 implementations and 2 input-output pairs.
 
 [Advent of Code 2022](https://adventofcode.com/2022) challenge.
 
-| Day | Problem                                                        | Solution                                                                                                                   |
-|-----|----------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
-| 1   | [Calorie Counting](https://adventofcode.com/2022/day/1)        | [CalorieCounting.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/CalorieCounting.kt)               |
-| 2   | [Rock Paper Scissors](https://adventofcode.com/2022/day/2)     | [RockPaperScissors.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/RockPaperScissors.kt)           |
-| 3   | [Rucksack Reorganization](https://adventofcode.com/2022/day/3) | [RucksackReorganization.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/RucksackReorganization.kt) |
-| 4   | [Camp of Cleanup](https://adventofcode.com/2022/day/4)         | [CampCleanup.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/CampCleanup.kt)                       |
-| 5   | [Supply Stacks](https://adventofcode.com/2022/day/5)           | [SupplyStacks.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/SupplyStacks.kt)                     |
-| 6   | [Tuning Trouble](https://adventofcode.com/2022/day/6)          | [TuningTrouble.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/TuningTrouble.kt)                   |
-| 7   | [No Space Left On Device](https://adventofcode.com/2022/day/7) | [DeviceSpace.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/DeviceSpace.kt)                       |
-| 8   | [Treetop Tree House](https://adventofcode.com/2022/day/8)      | [TreetopTreeHouse.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/TreetopTreeHouse.kt)             |
-| 9   | [Rope Bridge](https://adventofcode.com/2022/day/9)             | [RopeBridge.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/RopeBridge.kt)                         |
-| 10  | [Cathode-Ray Tube](https://adventofcode.com/2022/day/10)       | [CathodeRayTube.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/CathodeRayTube.kt)                 |
-| 11  | [Monkey In The Middle](https://adventofcode.com/2022/day/11)   | [MonkeyInTheMiddle.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/MonkeyInTheMiddle.kt)           |
+| Day | Problem                                                         | Solution                                                                                                                   |
+|-----|-----------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| 1   | [Calorie Counting](https://adventofcode.com/2022/day/1)         | [CalorieCounting.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/CalorieCounting.kt)               |
+| 2   | [Rock Paper Scissors](https://adventofcode.com/2022/day/2)      | [RockPaperScissors.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/RockPaperScissors.kt)           |
+| 3   | [Rucksack Reorganization](https://adventofcode.com/2022/day/3)  | [RucksackReorganization.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/RucksackReorganization.kt) |
+| 4   | [Camp of Cleanup](https://adventofcode.com/2022/day/4)          | [CampCleanup.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/CampCleanup.kt)                       |
+| 5   | [Supply Stacks](https://adventofcode.com/2022/day/5)            | [SupplyStacks.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/SupplyStacks.kt)                     |
+| 6   | [Tuning Trouble](https://adventofcode.com/2022/day/6)           | [TuningTrouble.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/TuningTrouble.kt)                   |
+| 7   | [No Space Left On Device](https://adventofcode.com/2022/day/7)  | [DeviceSpace.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/DeviceSpace.kt)                       |
+| 8   | [Treetop Tree House](https://adventofcode.com/2022/day/8)       | [TreetopTreeHouse.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/TreetopTreeHouse.kt)             |
+| 9   | [Rope Bridge](https://adventofcode.com/2022/day/9)              | [RopeBridge.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/RopeBridge.kt)                         |
+| 10  | [Cathode-Ray Tube](https://adventofcode.com/2022/day/10)        | [CathodeRayTube.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/CathodeRayTube.kt)                 |
+| 11  | [Monkey In The Middle](https://adventofcode.com/2022/day/11)    | [MonkeyInTheMiddle.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/MonkeyInTheMiddle.kt)           |
+| 11  | [Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) | [HillClimbingAlgorithm.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/HillClimbingAlgorithm.kt)   |
 
 ## Leetcode
 
