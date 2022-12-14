@@ -55,7 +55,8 @@ With execution of 4 tests for 2 implementations and 2 input-output pairs.
 | 9   | [Rope Bridge](https://adventofcode.com/2022/day/9)              | [RopeBridge.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/RopeBridge.kt)                         |
 | 10  | [Cathode-Ray Tube](https://adventofcode.com/2022/day/10)        | [CathodeRayTube.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/CathodeRayTube.kt)                 |
 | 11  | [Monkey In The Middle](https://adventofcode.com/2022/day/11)    | [MonkeyInTheMiddle.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/MonkeyInTheMiddle.kt)           |
-| 11  | [Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) | [HillClimbingAlgorithm.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/HillClimbingAlgorithm.kt)   |
+| 12  | [Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) | [HillClimbingAlgorithm.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/HillClimbingAlgorithm.kt)   |
+| 13  | [Distress Signal](https://adventofcode.com/2022/day/13)         | [DistressSignal.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/DistressSignal.kt)                 |
 
 ## Leetcode
 
