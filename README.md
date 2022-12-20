@@ -57,6 +57,7 @@ With execution of 4 tests for 2 implementations and 2 input-output pairs.
 | 11  | [Monkey In The Middle](https://adventofcode.com/2022/day/11)    | [MonkeyInTheMiddle.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/MonkeyInTheMiddle.kt)           |
 | 12  | [Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) | [HillClimbingAlgorithm.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/HillClimbingAlgorithm.kt)   |
 | 13  | [Distress Signal](https://adventofcode.com/2022/day/13)         | [DistressSignal.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/DistressSignal.kt)                 |
+| 14  | [Regolith Reservoir](https://adventofcode.com/2022/day/14)      | [RegolithReservoir.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentytwo/RegolithReservoir.kt)           |
 
 ## Leetcode
 
