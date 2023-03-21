@@ -67,9 +67,10 @@ The following challenges from the [Leetcode](https://leetcode.com/).
 
 This is the list of the [Top Interview Questions](https://leetcode.com/problemset/all/?listId=wpwgkgt&page=1).
 
-| Number | Problem                                               | Solution                                                                         |
-|--------|-------------------------------------------------------|----------------------------------------------------------------------------------|
-| 412    | [Fizz Buzz](https://leetcode.com/problems/fizz-buzz/) | [FizzBazz.kt](src/main/kotlin/io/github/chizganov/puzzlers/leetcode/FizzBuzz.kt) |
+| Number | Problem                                                         | Solution                                                                                   |
+|--------|-----------------------------------------------------------------|--------------------------------------------------------------------------------------------|
+| 344    | [Reverse String](https://leetcode.com/problems/reverse-string/) | [ReverseString.kt](src/main/kotlin/io/github/chizganov/puzzlers/leetcode/ReverseString.kt) |
+| 412    | [Fizz Buzz](https://leetcode.com/problems/fizz-buzz/)           | [FizzBazz.kt](src/main/kotlin/io/github/chizganov/puzzlers/leetcode/FizzBuzz.kt)           |
 
 ### May LeetCoding Challenge
 
