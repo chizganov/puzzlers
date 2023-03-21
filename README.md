@@ -63,6 +63,14 @@ With execution of 4 tests for 2 implementations and 2 input-output pairs.
 
 The following challenges from the [Leetcode](https://leetcode.com/).
 
+### Top Interview Questions
+
+This is the list of the [Top Interview Questions](https://leetcode.com/problemset/all/?listId=wpwgkgt&page=1).
+
+| Number | Problem                                               | Solution                                                                         |
+|--------|-------------------------------------------------------|----------------------------------------------------------------------------------|
+| 412    | [Fizz Buzz](https://leetcode.com/problems/fizz-buzz/) | [FizzBazz.kt](src/main/kotlin/io/github/chizganov/puzzlers/leetcode/FizzBuzz.kt) |
+
 ### May LeetCoding Challenge
 
 [May LeetCoding](https://leetcode.com/explore/featured/card/may-leetcoding-challenge/) consists of 31 daily problems
