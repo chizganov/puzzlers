@@ -67,13 +67,14 @@ The following challenges from the [Leetcode](https://leetcode.com/).
 
 This is the list of the [Top Interview Questions](https://leetcode.com/problemset/all/?listId=wpwgkgt&page=1).
 
-| Number | Problem                                                                                     | Solution                                                                                         |
-|--------|---------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
-| 20     | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)                       | [ValidParentheses.kt](src/main/kotlin/io/github/chizganov/puzzlers/leetcode/ValidParentheses.kt) |
-| 101    | [Symmetric Tree](https://leetcode.com/problems/symmetric-tree/)                             | [SymmetricTree.kt](src/main/kotlin/io/github/chizganov/puzzlers/leetcode/SymmetricTree.kt)       |
-| 104    | [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) | [BstMaxDepth.kt](src/main/kotlin/io/github/chizganov/puzzlers/leetcode/BinaryTreeMaxDepth.kt)    |
-| 344    | [Reverse String](https://leetcode.com/problems/reverse-string/)                             | [ReverseString.kt](src/main/kotlin/io/github/chizganov/puzzlers/leetcode/ReverseString.kt)       |
-| 412    | [Fizz Buzz](https://leetcode.com/problems/fizz-buzz/)                                       | [FizzBazz.kt](src/main/kotlin/io/github/chizganov/puzzlers/leetcode/FizzBuzz.kt)                 |
+| Number | Problem                                                                                     | Solution                                                                                               |
+|--------|---------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
+| 14     | [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/)               | [LongestCommonPrefix.kt](src/main/kotlin/io/github/chizganov/puzzlers/leetcode/LongestCommonPrefix.kt) |
+| 20     | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)                       | [ValidParentheses.kt](src/main/kotlin/io/github/chizganov/puzzlers/leetcode/ValidParentheses.kt)       |
+| 101    | [Symmetric Tree](https://leetcode.com/problems/symmetric-tree/)                             | [SymmetricTree.kt](src/main/kotlin/io/github/chizganov/puzzlers/leetcode/SymmetricTree.kt)             |
+| 104    | [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) | [BstMaxDepth.kt](src/main/kotlin/io/github/chizganov/puzzlers/leetcode/BinaryTreeMaxDepth.kt)          |
+| 344    | [Reverse String](https://leetcode.com/problems/reverse-string/)                             | [ReverseString.kt](src/main/kotlin/io/github/chizganov/puzzlers/leetcode/ReverseString.kt)             |
+| 412    | [Fizz Buzz](https://leetcode.com/problems/fizz-buzz/)                                       | [FizzBazz.kt](src/main/kotlin/io/github/chizganov/puzzlers/leetcode/FizzBuzz.kt)                       |
 
 ### May LeetCoding Challenge
 
