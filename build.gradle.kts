@@ -13,7 +13,8 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
-    testImplementation(platform("org.junit:junit-bom:5.9.0"))
+    testImplementation("io.kotest:kotest-assertions-core:5.6.2")
+    testImplementation(platform("org.junit:junit-bom:5.9.2"))
     testImplementation("org.junit.jupiter:junit-jupiter-params")
 }
 
