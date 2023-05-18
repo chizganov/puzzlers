@@ -1,5 +1,6 @@
 .idea/*
 !.idea/fileTemplates/
+!.idea/timetracker.xml
 
 out/
 build/
