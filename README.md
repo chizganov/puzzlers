@@ -38,8 +38,17 @@ fun findTotalRearrangementPriority(rucksackReorganization: RucksackReorganizatio
 With execution of 4 tests for 2 implementations and 2 input-output pairs.
 ![test-results.png](doc/test-results.png)
 
-## Advent of Code 2022
+## Advent of Code
 
+### Advent of Code 2024
+
+[Advent of Code 2024](https://adventofcode.com/2024) challenge.
+
+| Day | Problem                                                   | Solution                                                                                                          |
+|-----|-----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| 1   | [Historian Hysteria](https://adventofcode.com/2024/day/1) | [HistorianHysteria.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentyfour/HistorianHysteria.kt) |
+
+### Advent of Code 2022
 [Advent of Code 2022](https://adventofcode.com/2022) challenge.
 
 | Day | Problem                                                         | Solution                                                                                                                   |
