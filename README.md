@@ -47,6 +47,7 @@ With execution of 4 tests for 2 implementations and 2 input-output pairs.
 | Day | Problem                                                   | Solution                                                                                                          |
 |-----|-----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
 | 1   | [Historian Hysteria](https://adventofcode.com/2024/day/1) | [HistorianHysteria.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentyfour/HistorianHysteria.kt) |
+| 2   | [Red-Nosed Reports](https://adventofcode.com/2024/day/2)  | [RedNosedReports.kt](src/main/kotlin/io/github/chizganov/puzzlers/adventofcode/twentyfour/RedNosedReports.kt)     |
 
 ### Advent of Code 2022
 [Advent of Code 2022](https://adventofcode.com/2022) challenge.
